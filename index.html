@@ -136,21 +136,31 @@
       margin-bottom:20px;
     }
 
-    .official-store-badge{
-      width:250px;
-      display:block;
-      transition:0.2s;
-      filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
-    }
+.official-store-badge{
+  display:block;
+  transition:0.2s;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
+}
 
-    .official-store-badge:hover{
-      transform:translateY(-2px);
-    }
+.official-store-badge:hover{
+  transform:translateY(-2px);
+}
 
-    .official-store-badge img{
-      width:100%;
-      display:block;
-    }
+/* GOOGLE PLAY */
+.official-store-badge.google{
+  width:250px;
+}
+
+/* APP STORE */
+.official-store-badge.apple{
+  width:223px;
+  margin-top:2px;
+}
+
+.official-store-badge img{
+  width:100%;
+  display:block;
+}
 
     /* PROMO VIDEO */
 
@@ -490,27 +500,27 @@
         <!-- STORE BADGES -->
         <div class="store-buttons">
 
-          <!-- GOOGLE PLAY -->
-          <a class="official-store-badge"
-            href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
-            target="_blank">
+         <!-- GOOGLE PLAY -->
+<a class="official-store-badge google"
+  href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
+  target="_blank">
 
-            <img
-              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-              alt="Get it on Google Play">
+  <img
+    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+    alt="Get it on Google Play">
 
-          </a>
+</a>
 
-          <!-- APP STORE -->
-          <a class="official-store-badge"
-            href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
-            target="_blank">
+<!-- APP STORE -->
+<a class="official-store-badge apple"
+  href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
+  target="_blank">
 
-            <img
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              alt="Download on the App Store">
+  <img
+    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+    alt="Download on the App Store">
 
-          </a>
+</a>
 
         </div>
 
