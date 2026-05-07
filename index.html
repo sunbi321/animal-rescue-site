@@ -6,6 +6,7 @@
   <title>Animal Rescue - Puzzle Game</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -25,6 +26,8 @@
       min-height:100vh;
     }
 
+    /* BACKGROUND */
+
     .background{
       position:fixed;
       inset:0;
@@ -38,7 +41,6 @@
       height:100%;
       object-fit:cover;
       object-position:center top;
-      opacity:1;
       display:block;
     }
 
@@ -81,7 +83,9 @@
       font-weight:900;
       color:#ffd85e;
       text-align:left;
-      text-shadow:0 3px 0 #7a3e10, 0 8px 18px rgba(0,0,0,0.45);
+      text-shadow:
+        0 3px 0 #7a3e10,
+        0 8px 18px rgba(0,0,0,0.45);
     }
 
     .menu{
@@ -125,6 +129,8 @@
       line-height:1.6;
       text-shadow:0 3px 12px rgba(0,0,0,0.55);
     }
+
+    /* STORE */
 
     .store-buttons{
       display:flex;
@@ -196,6 +202,8 @@
       margin-bottom:24px;
     }
 
+    /* FEATURES */
+
     .features-title{
       font-size:30px;
       color:#ffd85e;
@@ -253,6 +261,8 @@
       color:#f1e5d5;
     }
 
+    /* NEWS */
+
     .news{
       display:flex;
       align-items:center;
@@ -283,6 +293,8 @@
       color:#f1e5d5;
     }
 
+    /* BOTTOM CHARACTERS */
+
     .characters{
       display:flex;
       justify-content:center;
@@ -310,6 +322,7 @@
     }
 
     @media(max-width:420px){
+
       h1{
         font-size:50px;
       }
@@ -346,19 +359,24 @@
         height:120px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- FULL BACKGROUND -->
   <div class="background">
     <img src="./loading.png" alt="Background">
   </div>
 
   <div class="page">
+
     <div class="content">
 
+      <!-- TOP -->
       <div class="top">
+
         <div class="logo">
           ANIMAL<br>RESCUE
         </div>
@@ -368,9 +386,12 @@
           <span></span>
           <span></span>
         </div>
+
       </div>
 
+      <!-- HERO -->
       <section class="hero">
+
         <h1>
           Animal<br>
           Rescue
@@ -385,8 +406,10 @@
           and enjoy a heartwarming forest adventure!
         </p>
 
+        <!-- STORE -->
         <div class="store-buttons">
 
+          <!-- GOOGLE -->
           <a class="store-badge"
             href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
             target="_blank">
@@ -399,93 +422,126 @@
               <small>GET IT ON</small>
               <strong>Google Play</strong>
             </div>
+
           </a>
 
+          <!-- APPLE -->
           <a class="store-badge"
             href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
             target="_blank">
 
             <div class="store-icon">
+
               <svg viewBox="0 0 384 512">
                 <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.2.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 232.9 19.4 28 42.5 59.5 72.9 58.4 29.2-1.2 40.2-18.9 75.5-18.9 35.3 0 45.2 18.9 76.2 18.3 31.5-.6 51.4-28.6 70.6-56.7 22.3-32.6 31.5-64.1 32-65.7-.7-.3-61-23.4-61.2-92.5zM260.3 101.5c16.1-19.5 27-46.7 24-73.5-23.2.9-51.3 15.4-67.9 34.9-14.9 17.3-27.9 45-24.4 71.4 25.9 2 52.3-13.2 68.3-32.8z"/>
               </svg>
+
             </div>
 
             <div class="store-text">
               <small>Download on the</small>
               <strong>App Store</strong>
             </div>
+
           </a>
 
         </div>
+
       </section>
 
+      <!-- FEATURES -->
       <section>
+
         <h2 class="features-title">
           Game Features
         </h2>
 
         <div class="features">
 
+          <!-- CARD 1 -->
           <div class="feature-card">
+
             <div class="feature-image">
               <img src="./long-cat.png" alt="Long Cat">
             </div>
 
             <div class="feature-content">
               <h3>Easy Puzzles</h3>
+
               <p>
                 Simple and fun match puzzles for everyone.
               </p>
             </div>
+
           </div>
 
+          <!-- CARD 2 -->
           <div class="feature-card">
+
             <div class="feature-image">
               <img src="./llama.png" alt="Llama">
             </div>
 
             <div class="feature-content">
               <h3>Rescue Animals</h3>
+
               <p>
                 Help cute animal friends and enjoy their story.
               </p>
             </div>
+
           </div>
 
+          <!-- CARD 3 -->
           <div class="feature-card">
+
             <div class="feature-image">
-              <img src="./loading.png" alt="Animal">
+              <img src="./giraffe.png" alt="Giraffe">
             </div>
 
             <div class="feature-content">
               <h3>Many Stages</h3>
+
               <p>
                 Discover relaxing levels and fun challenges.
               </p>
             </div>
+
           </div>
 
         </div>
+
       </section>
 
+      <!-- NEWS -->
       <section class="news">
+
         <div class="news-icon">
           🔔
         </div>
 
         <div>
+
           <h2>News & Updates</h2>
+
           <p>
             Future announcements, update notes,
             events, and support information will be posted here.
           </p>
+
         </div>
+
       </section>
 
+      <!-- BOTTOM CHARACTERS -->
       <div class="characters">
+
         <img src="./long-cat.png" alt="Long Cat">
+
         <img src="./llama.png" alt="Llama">
+
+        <img src="./giraffe.png" alt="Giraffe">
+
       </div>
 
       <footer>
@@ -493,6 +549,7 @@
       </footer>
 
     </div>
+
   </div>
 
 </body>
