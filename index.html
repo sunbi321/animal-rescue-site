@@ -196,34 +196,45 @@
     .features{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:10px;
+      gap:12px;
     }
 
     .feature-card{
       background:rgba(35,28,20,0.72);
       border:1px solid rgba(255,255,255,0.14);
       backdrop-filter:blur(8px);
-      border-radius:20px;
-      padding:18px 10px;
-      min-height:150px;
+      border-radius:22px;
+      overflow:hidden;
       box-shadow:0 10px 24px rgba(0,0,0,0.35);
     }
 
-    .feature-icon{
-      width:58px;
-      height:58px;
-      margin:0 auto 12px;
-      border-radius:16px;
-      background:rgba(255,195,70,0.18);
+    /* IMAGE TOP HALF */
+    .feature-image{
+      width:100%;
+      height:90px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.04);
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:center;
-      font-size:30px;
+    }
+
+    .feature-image img{
+      width:100%;
+      height:140px;
+      object-fit:contain;
+      transform:translateY(-10px);
+      filter:drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+    }
+
+    .feature-content{
+      padding:14px 10px 18px;
     }
 
     .feature-card h3{
       font-size:15px;
       margin-bottom:8px;
+      color:#ffd85e;
     }
 
     .feature-card p{
@@ -310,16 +321,20 @@
         width:100%;
       }
 
-      .feature-card{
-        min-height:138px;
-      }
-
       .feature-card h3{
         font-size:13px;
       }
 
       .feature-card p{
         font-size:11px;
+      }
+
+      .feature-image{
+        height:80px;
+      }
+
+      .feature-image img{
+        height:120px;
       }
     }
 
@@ -382,14 +397,13 @@
 
           </a>
 
-          <!-- Apple App Store -->
+          <!-- App Store -->
           <a class="store-badge"
             href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
             target="_blank">
 
             <div class="store-icon">
 
-              <!-- REAL APPLE LOGO SVG -->
               <svg viewBox="0 0 384 512">
                 <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.2.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 232.9 19.4 28 42.5 59.5 72.9 58.4 29.2-1.2 40.2-18.9 75.5-18.9 35.3 0 45.2 18.9 76.2 18.3 31.5-.6 51.4-28.6 70.6-56.7 22.3-32.6 31.5-64.1 32-65.7-.7-.3-61-23.4-61.2-92.5zM260.3 101.5c16.1-19.5 27-46.7 24-73.5-23.2.9-51.3 15.4-67.9 34.9-14.9 17.3-27.9 45-24.4 71.4 25.9 2 52.3-13.2 68.3-32.8z"/>
               </svg>
@@ -407,6 +421,7 @@
 
       </section>
 
+      <!-- FEATURES -->
       <section>
 
         <h2 class="features-title">
@@ -415,39 +430,54 @@
 
         <div class="features">
 
+          <!-- CARD 1 -->
           <div class="feature-card">
 
-            <div class="feature-icon">🧩</div>
+            <div class="feature-image">
+              <img src="./long-cat.png" alt="Long Cat">
+            </div>
 
-            <h3>Easy Puzzles</h3>
+            <div class="feature-content">
+              <h3>Easy Puzzles</h3>
 
-            <p>
-              Simple and fun match puzzles for everyone.
-            </p>
+              <p>
+                Simple and fun match puzzles for everyone.
+              </p>
+            </div>
 
           </div>
 
+          <!-- CARD 2 -->
           <div class="feature-card">
 
-            <div class="feature-icon">🐾</div>
+            <div class="feature-image">
+              <img src="./llama.png" alt="Llama">
+            </div>
 
-            <h3>Rescue Animals</h3>
+            <div class="feature-content">
+              <h3>Rescue Animals</h3>
 
-            <p>
-              Help cute animal friends and enjoy their story.
-            </p>
+              <p>
+                Help cute animal friends and enjoy their story.
+              </p>
+            </div>
 
           </div>
 
+          <!-- CARD 3 -->
           <div class="feature-card">
 
-            <div class="feature-icon">⭐</div>
+            <div class="feature-image">
+              <img src="./loading.png" alt="Animal">
+            </div>
 
-            <h3>Many Stages</h3>
+            <div class="feature-content">
+              <h3>Many Stages</h3>
 
-            <p>
-              Discover relaxing levels and fun challenges.
-            </p>
+              <p>
+                Discover relaxing levels and fun challenges.
+              </p>
+            </div>
 
           </div>
 
@@ -455,6 +485,7 @@
 
       </section>
 
+      <!-- NEWS -->
       <section class="news">
 
         <div class="news-icon">
@@ -474,10 +505,9 @@
 
       </section>
 
-      <!-- CHARACTERS -->
+      <!-- BOTTOM CHARACTERS -->
       <div class="characters">
 
-        <!-- MAKE SURE THESE FILES EXIST -->
         <img src="./long-cat.png" alt="Long Cat">
 
         <img src="./llama.png" alt="Llama">
