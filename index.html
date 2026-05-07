@@ -6,7 +6,6 @@
   <title>Animal Rescue - Puzzle Game</title>
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -28,8 +27,6 @@
       background:#000;
     }
 
-    /* CENTER BACKGROUND AREA */
-
     .page{
       width:100%;
       max-width:480px;
@@ -39,8 +36,6 @@
       overflow:hidden;
       background:#000;
     }
-
-    /* ONLY CENTER IMAGE */
 
     .background{
       position:absolute;
@@ -60,8 +55,6 @@
         rgba(0,0,0,0.82)
       );
     }
-
-    /* CONTENT */
 
     .content{
       position:relative;
@@ -130,14 +123,12 @@
       text-shadow:0 3px 12px rgba(0,0,0,0.55);
     }
 
-    /* STORE BUTTONS */
-
     .store-buttons{
       display:flex;
       flex-direction:column;
       align-items:center;
       gap:12px;
-      margin-bottom:260px;
+      margin-bottom:18px;
     }
 
     .store-badge{
@@ -166,7 +157,6 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      color:white;
       flex-shrink:0;
     }
 
@@ -174,12 +164,6 @@
       width:100%;
       height:100%;
       display:block;
-      fill:currentColor;
-    }
-
-    .play-icon{
-      font-size:28px;
-      font-weight:bold;
     }
 
     .store-text{
@@ -198,11 +182,28 @@
       font-size:20px;
     }
 
+    .promo-video{
+      width:100%;
+      max-width:280px;
+      margin:20px auto 230px;
+      border-radius:24px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 14px 34px rgba(0,0,0,0.55);
+      border:1px solid rgba(255,255,255,0.18);
+    }
+
+    .promo-video iframe{
+      width:100%;
+      aspect-ratio:9/16;
+      display:block;
+      border:0;
+      background:#000;
+    }
+
     section{
       margin-bottom:24px;
     }
-
-    /* FEATURES */
 
     .features-title{
       font-size:30px;
@@ -261,8 +262,6 @@
       color:#f1e5d5;
     }
 
-    /* NEWS */
-
     .news{
       display:flex;
       align-items:center;
@@ -293,57 +292,96 @@
       color:#f1e5d5;
     }
 
-    /* BOTTOM CHARACTERS */
-
     .characters{
       display:flex;
       justify-content:center;
       align-items:flex-end;
-      gap:14px;
-      margin:30px 0 34px;
-      flex-wrap:wrap;
+      gap:10px;
+      margin:34px 0 34px;
+      min-height:145px;
+      position:relative;
     }
 
     .characters img{
-      height:110px;
+      height:98px;
       object-fit:contain;
       filter:drop-shadow(0 8px 14px rgba(0,0,0,0.45));
-      animation:bounce 2.4s ease-in-out infinite;
+      animation:
+        animalBounce 2.6s ease-in-out infinite,
+        animalSide 3.8s ease-in-out infinite;
+      will-change:transform;
     }
 
     .characters img:nth-child(1){
-      animation-delay:0s;
+      animation-delay:0s, 0s;
     }
 
     .characters img:nth-child(2){
-      height:125px;
-      animation-delay:0.4s;
+      height:116px;
+      animation-delay:0.25s, 0.15s;
     }
 
     .characters img:nth-child(3){
-      animation-delay:0.8s;
+      height:102px;
+      animation-delay:0.5s, 0.3s;
     }
 
-    @keyframes bounce{
+    .characters img:nth-child(4){
+      height:110px;
+      animation-delay:0.75s, 0.45s;
+    }
 
+    .characters img:nth-child(5){
+      height:96px;
+      animation-delay:1s, 0.6s;
+    }
+
+    @keyframes animalBounce{
       0%{
-        transform:translateY(0px) rotate(0deg);
+        translate:0 0;
+        rotate:0deg;
       }
 
       25%{
-        transform:translateY(-8px) rotate(-2deg);
+        translate:0 -8px;
+        rotate:-2deg;
       }
 
       50%{
-        transform:translateY(0px) rotate(0deg);
+        translate:0 0;
+        rotate:0deg;
       }
 
       75%{
-        transform:translateY(-6px) rotate(2deg);
+        translate:0 -6px;
+        rotate:2deg;
       }
 
       100%{
-        transform:translateY(0px) rotate(0deg);
+        translate:0 0;
+        rotate:0deg;
+      }
+    }
+
+    @keyframes animalSide{
+      0%{
+        transform:translateX(0);
+      }
+
+      25%{
+        transform:translateX(-6px);
+      }
+
+      50%{
+        transform:translateX(4px);
+      }
+
+      75%{
+        transform:translateX(7px);
+      }
+
+      100%{
+        transform:translateX(0);
       }
     }
 
@@ -368,12 +406,13 @@
         font-size:16px;
       }
 
-      .store-buttons{
-        margin-bottom:220px;
-      }
-
       .store-badge{
         width:100%;
+      }
+
+      .promo-video{
+        max-width:250px;
+        margin-bottom:210px;
       }
 
       .feature-card h3{
@@ -392,15 +431,30 @@
         height:120px;
       }
 
+      .characters{
+        gap:6px;
+      }
+
       .characters img{
-        height:95px;
+        height:78px;
       }
 
       .characters img:nth-child(2){
-        height:110px;
+        height:92px;
+      }
+
+      .characters img:nth-child(3){
+        height:82px;
+      }
+
+      .characters img:nth-child(4){
+        height:90px;
+      }
+
+      .characters img:nth-child(5){
+        height:78px;
       }
     }
-
   </style>
 </head>
 
@@ -408,7 +462,6 @@
 
   <div class="page">
 
-    <!-- CENTER BACKGROUND -->
     <div class="background"></div>
 
     <div class="content">
@@ -445,13 +498,20 @@
 
         <div class="store-buttons">
 
-          <!-- GOOGLE PLAY -->
           <a class="store-badge"
             href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
             target="_blank">
 
             <div class="store-icon">
-              <div class="play-icon">▶</div>
+
+              <!-- Google Play Logo -->
+              <svg viewBox="0 0 512 512">
+                <path fill="#32BBFF" d="M96 32.4v447.2c0 11.7 13.1 18.7 22.8 12.1l252.7-171.3L96 32.4z"/>
+                <path fill="#00C853" d="M96 32.4l275.5 288 73.8-50.1c21.1-14.3 21.1-45.4 0-59.7L118.8 20.3C109.1 13.7 96 20.7 96 32.4z"/>
+                <path fill="#FFEA00" d="M371.5 320.4L96 32.4l230.8 240.9 44.7 47.1z"/>
+                <path fill="#FF3D00" d="M96 479.6l275.5-159.2-44.7-47.1L118.8 491.7C109.1 498.3 96 491.3 96 479.6z"/>
+              </svg>
+
             </div>
 
             <div class="store-text">
@@ -461,15 +521,15 @@
 
           </a>
 
-          <!-- APP STORE -->
           <a class="store-badge"
             href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
             target="_blank">
 
             <div class="store-icon">
 
+              <!-- Apple Logo -->
               <svg viewBox="0 0 384 512">
-                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.2.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 232.9 19.4 28 42.5 59.5 72.9 58.4 29.2-1.2 40.2-18.9 75.5-18.9 35.3 0 45.2 18.9 76.2 18.3 31.5-.6 51.4-28.6 70.6-56.7 22.3-32.6 31.5-64.1 32-65.7-.7-.3-61-23.4-61.2-92.5zM260.3 101.5c16.1-19.5 27-46.7 24-73.5-23.2.9-51.3 15.4-67.9 34.9-14.9 17.3-27.9 45-24.4 71.4 25.9 2 52.3-13.2 68.3-32.8z"/>
+                <path fill="#ffffff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.2.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 232.9 19.4 28 42.5 59.5 72.9 58.4 29.2-1.2 40.2-18.9 75.5-18.9 35.3 0 45.2 18.9 76.2 18.3 31.5-.6 51.4-28.6 70.6-56.7 22.3-32.6 31.5-64.1 32-65.7-.7-.3-61-23.4-61.2-92.5zM260.3 101.5c16.1-19.5 27-46.7 24-73.5-23.2.9-51.3 15.4-67.9 34.9-14.9 17.3-27.9 45-24.4 71.4 25.9 2 52.3-13.2 68.3-32.8z"/>
               </svg>
 
             </div>
@@ -483,9 +543,17 @@
 
         </div>
 
+        <div class="promo-video">
+          <iframe
+            src="https://www.youtube.com/embed/itqfzraBHlI"
+            title="Animal Rescue Promo Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
       </section>
 
-      <!-- FEATURES -->
       <section>
 
         <h2 class="features-title">
@@ -494,62 +562,49 @@
 
         <div class="features">
 
-          <!-- CARD 1 -->
           <div class="feature-card">
-
             <div class="feature-image">
               <img src="./long-cat.png" alt="Long Cat">
             </div>
 
             <div class="feature-content">
               <h3>Easy Puzzles</h3>
-
               <p>
                 Simple and fun match puzzles for everyone.
               </p>
             </div>
-
           </div>
 
-          <!-- CARD 2 -->
           <div class="feature-card">
-
             <div class="feature-image">
               <img src="./llama.png" alt="Llama">
             </div>
 
             <div class="feature-content">
               <h3>Rescue Animals</h3>
-
               <p>
                 Help cute animal friends and enjoy their story.
               </p>
             </div>
-
           </div>
 
-          <!-- CARD 3 -->
           <div class="feature-card">
-
             <div class="feature-image">
               <img src="./giraffe.png" alt="Giraffe">
             </div>
 
             <div class="feature-content">
               <h3>Many Stages</h3>
-
               <p>
                 Discover relaxing levels and fun challenges.
               </p>
             </div>
-
           </div>
 
         </div>
 
       </section>
 
-      <!-- NEWS -->
       <section class="news">
 
         <div class="news-icon">
@@ -557,28 +612,16 @@
         </div>
 
         <div>
-
           <h2>News & Updates</h2>
-
           <p>
             Future announcements, update notes,
             events, and support information will be posted here.
           </p>
-
         </div>
 
       </section>
 
-      <!-- BOTTOM CHARACTERS -->
-      <div class="characters">
-
-        <img src="./long-cat.png" alt="Long Cat">
-
-        <img src="./llama.png" alt="Llama">
-
-        <img src="./giraffe.png" alt="Giraffe">
-
-      </div>
+      <div class="characters" id="randomCharacters"></div>
 
       <footer>
         © 2026 Animal Rescue. All rights reserved.
@@ -587,6 +630,55 @@
     </div>
 
   </div>
+
+  <script>
+    const animals = [
+      "long-cat.png",
+      "llama.png",
+      "giraffe.png",
+      "dinosaur.png",
+      "elephant.png",
+      "Flamingo.png",
+      "flyingsquirrel.png",
+      "frog.png",
+      "red-panda.png",
+      "crocodile.png"
+    ];
+
+    const animalNames = {
+      "long-cat.png":"Long Cat",
+      "llama.png":"Llama",
+      "giraffe.png":"Giraffe",
+      "dinosaur.png":"Dinosaur",
+      "elephant.png":"Elephant",
+      "Flamingo.png":"Flamingo",
+      "flyingsquirrel.png":"Flying Squirrel",
+      "frog.png":"Frog",
+      "red-panda.png":"Red Panda",
+      "crocodile.png":"Crocodile"
+    };
+
+    function shuffleArray(array){
+      const copied = [...array];
+
+      for(let i = copied.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [copied[i], copied[j]] = [copied[j], copied[i]];
+      }
+
+      return copied;
+    }
+
+    const selectedAnimals = shuffleArray(animals).slice(0,5);
+    const charactersBox = document.getElementById("randomCharacters");
+
+    selectedAnimals.forEach((animal)=>{
+      const img = document.createElement("img");
+      img.src = "./" + animal;
+      img.alt = animalNames[animal] || "Animal";
+      charactersBox.appendChild(img);
+    });
+  </script>
 
 </body>
 </html>
