@@ -6,6 +6,7 @@
   <title>Animal Rescue - Puzzle Game</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -36,6 +37,8 @@
       overflow:hidden;
       background:#000;
     }
+
+    /* CENTER BACKGROUND */
 
     .background{
       position:absolute;
@@ -123,69 +126,38 @@
       text-shadow:0 3px 12px rgba(0,0,0,0.55);
     }
 
+    /* OFFICIAL STORE BADGES */
+
     .store-buttons{
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:12px;
-      margin-bottom:18px;
+      gap:14px;
+      margin-bottom:20px;
     }
 
-    .store-badge{
+    .official-store-badge{
       width:250px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      padding:13px 18px;
-      border-radius:14px;
-      background:rgba(0,0,0,0.78);
-      border:1.5px solid rgba(255,255,255,0.85);
-      color:white;
-      text-decoration:none;
-      box-shadow:0 8px 22px rgba(0,0,0,0.4);
+      display:block;
       transition:0.2s;
+      filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
     }
 
-    .store-badge:hover{
+    .official-store-badge:hover{
       transform:translateY(-2px);
     }
 
-    .store-icon{
-      width:32px;
-      height:32px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-shrink:0;
-    }
-
-    .store-icon svg{
+    .official-store-badge img{
       width:100%;
-      height:100%;
       display:block;
     }
 
-    .store-text{
-      text-align:left;
-      line-height:1.1;
-    }
-
-    .store-text small{
-      display:block;
-      font-size:10px;
-      opacity:0.9;
-      margin-bottom:3px;
-    }
-
-    .store-text strong{
-      font-size:20px;
-    }
+    /* PROMO VIDEO */
 
     .promo-video{
       width:100%;
       max-width:280px;
-      margin:20px auto 230px;
+      margin:22px auto 230px;
       border-radius:24px;
       overflow:hidden;
       background:#000;
@@ -193,20 +165,6 @@
       border:1px solid rgba(255,255,255,0.18);
     }
 
-.official-badge{
-  width:250px;
-  padding:0;
-  background:transparent;
-  border:none;
-  box-shadow:0 8px 22px rgba(0,0,0,0.4);
-}
-
-.official-badge img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-    
     .promo-video iframe{
       width:100%;
       aspect-ratio:9/16;
@@ -218,6 +176,8 @@
     section{
       margin-bottom:24px;
     }
+
+    /* FEATURES */
 
     .features-title{
       font-size:30px;
@@ -276,6 +236,8 @@
       color:#f1e5d5;
     }
 
+    /* NEWS */
+
     .news{
       display:flex;
       align-items:center;
@@ -289,17 +251,17 @@
       text-align:left;
     }
 
-.news-icon{
-  width:42px;
-  height:42px;
-  flex-shrink:0;
-}
+    .news-icon{
+      width:42px;
+      height:42px;
+      flex-shrink:0;
+    }
 
-.news-icon svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
+    .news-icon svg{
+      width:100%;
+      height:100%;
+      display:block;
+    }
 
     .news h2{
       color:#ffd85e;
@@ -312,6 +274,8 @@
       line-height:1.5;
       color:#f1e5d5;
     }
+
+    /* RANDOM ANIMALS */
 
     .characters{
       display:flex;
@@ -358,6 +322,7 @@
     }
 
     @keyframes animalBounce{
+
       0%{
         translate:0 0;
         rotate:0deg;
@@ -385,6 +350,7 @@
     }
 
     @keyframes animalSide{
+
       0%{
         transform:translateX(0);
       }
@@ -427,7 +393,7 @@
         font-size:16px;
       }
 
-      .store-badge{
+      .official-store-badge{
         width:100%;
       }
 
@@ -476,6 +442,7 @@
         height:78px;
       }
     }
+
   </style>
 </head>
 
@@ -483,10 +450,12 @@
 
   <div class="page">
 
+    <!-- BACKGROUND -->
     <div class="background"></div>
 
     <div class="content">
 
+      <!-- TOP -->
       <div class="top">
 
         <div class="logo">
@@ -501,6 +470,7 @@
 
       </div>
 
+      <!-- HERO -->
       <section class="hero">
 
         <h1>
@@ -517,62 +487,48 @@
           and enjoy a heartwarming forest adventure!
         </p>
 
+        <!-- STORE BADGES -->
         <div class="store-buttons">
 
-          <a class="store-badge"
+          <!-- GOOGLE PLAY -->
+          <a class="official-store-badge"
             href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
             target="_blank">
 
-<a class="store-badge official-badge"
-  href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
-  target="_blank">
-
-  <img
-    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-    alt="Get it on Google Play">
-
-</a>
-
-            <div class="store-text">
-              <small>GET IT ON</small>
-              <strong>Google Play</strong>
-            </div>
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+              alt="Get it on Google Play">
 
           </a>
 
-          <a class="store-badge"
+          <!-- APP STORE -->
+          <a class="official-store-badge"
             href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
             target="_blank">
 
-            <div class="store-icon">
-
-              <!-- Apple Logo -->
-              <svg viewBox="0 0 384 512">
-                <path fill="#ffffff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.2.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 232.9 19.4 28 42.5 59.5 72.9 58.4 29.2-1.2 40.2-18.9 75.5-18.9 35.3 0 45.2 18.9 76.2 18.3 31.5-.6 51.4-28.6 70.6-56.7 22.3-32.6 31.5-64.1 32-65.7-.7-.3-61-23.4-61.2-92.5zM260.3 101.5c16.1-19.5 27-46.7 24-73.5-23.2.9-51.3 15.4-67.9 34.9-14.9 17.3-27.9 45-24.4 71.4 25.9 2 52.3-13.2 68.3-32.8z"/>
-              </svg>
-
-            </div>
-
-            <div class="store-text">
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </div>
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Download on the App Store">
 
           </a>
 
         </div>
 
+        <!-- VIDEO -->
         <div class="promo-video">
+
           <iframe
             src="https://www.youtube.com/embed/itqfzraBHlI"
             title="Animal Rescue Promo Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
+
         </div>
 
       </section>
 
+      <!-- FEATURES -->
       <section>
 
         <h2 class="features-title">
@@ -582,77 +538,90 @@
         <div class="features">
 
           <div class="feature-card">
+
             <div class="feature-image">
               <img src="./long-cat.png" alt="Long Cat">
             </div>
 
             <div class="feature-content">
               <h3>Easy Puzzles</h3>
+
               <p>
                 Simple and fun match puzzles for everyone.
               </p>
             </div>
+
           </div>
 
           <div class="feature-card">
+
             <div class="feature-image">
               <img src="./llama.png" alt="Llama">
             </div>
 
             <div class="feature-content">
               <h3>Rescue Animals</h3>
+
               <p>
                 Help cute animal friends and enjoy their story.
               </p>
             </div>
+
           </div>
 
           <div class="feature-card">
+
             <div class="feature-image">
               <img src="./giraffe.png" alt="Giraffe">
             </div>
 
             <div class="feature-content">
               <h3>Many Stages</h3>
+
               <p>
                 Discover relaxing levels and fun challenges.
               </p>
             </div>
+
           </div>
 
         </div>
 
       </section>
 
+      <!-- NEWS -->
       <section class="news">
 
-<div class="news-icon">
+        <div class="news-icon">
 
-  <!-- CLEAN NEWS ICON -->
-  <svg viewBox="0 0 24 24" fill="none">
+          <svg viewBox="0 0 24 24" fill="none">
 
-    <path
-      d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z"
-      fill="#ffd85e"/>
+            <path
+              d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z"
+              fill="#ffd85e"/>
 
-    <path
-      d="M18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"
-      fill="#ffd85e"/>
+            <path
+              d="M18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"
+              fill="#ffd85e"/>
 
-  </svg>
+          </svg>
 
-</div>
+        </div>
 
         <div>
+
           <h2>News & Updates</h2>
+
           <p>
             Future announcements, update notes,
             events, and support information will be posted here.
           </p>
+
         </div>
 
       </section>
 
+      <!-- RANDOM ANIMALS -->
       <div class="characters" id="randomCharacters"></div>
 
       <footer>
@@ -664,6 +633,7 @@
   </div>
 
   <script>
+
     const animals = [
       "long-cat.png",
       "llama.png",
@@ -691,25 +661,36 @@
     };
 
     function shuffleArray(array){
+
       const copied = [...array];
 
       for(let i = copied.length - 1; i > 0; i--){
+
         const j = Math.floor(Math.random() * (i + 1));
+
         [copied[i], copied[j]] = [copied[j], copied[i]];
       }
 
       return copied;
     }
 
-    const selectedAnimals = shuffleArray(animals).slice(0,5);
-    const charactersBox = document.getElementById("randomCharacters");
+    const selectedAnimals =
+      shuffleArray(animals).slice(0,5);
+
+    const charactersBox =
+      document.getElementById("randomCharacters");
 
     selectedAnimals.forEach((animal)=>{
+
       const img = document.createElement("img");
+
       img.src = "./" + animal;
+
       img.alt = animalNames[animal] || "Animal";
+
       charactersBox.appendChild(img);
     });
+
   </script>
 
 </body>
