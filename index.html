@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Animal Rescue - Puzzle Game</title>
+  <title>たすけて！アニマルレスキュー - パズルゲーム</title>
 
   <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap");
 
     *{
       margin:0;
@@ -17,7 +19,7 @@
       width:100%;
       min-height:100%;
       overflow-x:hidden;
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:"M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
       background:#000;
       color:white;
     }
@@ -102,10 +104,10 @@
     }
 
     h1{
-      font-size:60px;
+      font-size:48px;
       line-height:0.95;
       font-weight:900;
-      letter-spacing:-2px;
+      letter-spacing:-1px;
       margin-bottom:16px;
       text-shadow:0 6px 20px rgba(0,0,0,0.5);
     }
@@ -392,7 +394,7 @@
     @media(max-width:420px){
 
       h1{
-        font-size:50px;
+        font-size:42px;
       }
 
       .subtitle{
@@ -469,7 +471,7 @@
       <div class="top">
 
         <div class="logo">
-          ANIMAL<br>RESCUE
+          アニマル<br>レスキュー
         </div>
 
         <div class="menu">
@@ -484,17 +486,17 @@
       <section class="hero">
 
         <h1>
-          Animal<br>
-          Rescue
+          たすけて！<br>
+          アニマルレスキュー
         </h1>
 
         <div class="subtitle">
-          Puzzle Game
+          ほのぼのパズルゲーム
         </div>
 
         <p class="desc">
-          Solve puzzles, rescue adorable animals,
-          and enjoy a heartwarming forest adventure!
+          パズルをといて、かわいい動物たちを助けよう！
+          森の中で、ほっこり小さな冒険がはじまるよ♪
         </p>
 
         <!-- STORE BADGES -->
@@ -529,7 +531,7 @@
 
           <iframe
             src="https://www.youtube.com/embed/itqfzraBHlI"
-            title="Animal Rescue Promo Video"
+            title="たすけて！アニマルレスキュー 紹介動画"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
@@ -542,7 +544,7 @@
       <section>
 
         <h2 class="features-title">
-          Game Features
+          ゲームのすてきなところ
         </h2>
 
         <div class="features">
@@ -550,14 +552,14 @@
           <div class="feature-card">
 
             <div class="feature-image">
-              <img src="./long-cat.png" alt="Long Cat">
+              <img src="./long-cat.png" alt="ながいねこ">
             </div>
 
             <div class="feature-content">
-              <h3>Easy Puzzles</h3>
+              <h3>かんたんパズル</h3>
 
               <p>
-                Simple and fun match puzzles for everyone.
+                だれでも楽しく遊べる、やさしいマッチパズルだよ♪
               </p>
             </div>
 
@@ -566,14 +568,14 @@
           <div class="feature-card">
 
             <div class="feature-image">
-              <img src="./llama.png" alt="Llama">
+              <img src="./llama.png" alt="ラマ">
             </div>
 
             <div class="feature-content">
-              <h3>Rescue Animals</h3>
+              <h3>どうぶつ救出</h3>
 
               <p>
-                Help cute animal friends and enjoy their story.
+                かわいい動物のおともだちを助けて、物語も楽しもう！
               </p>
             </div>
 
@@ -582,14 +584,14 @@
           <div class="feature-card">
 
             <div class="feature-image">
-              <img src="./giraffe.png" alt="Giraffe">
+              <img src="./giraffe.png" alt="キリン">
             </div>
 
             <div class="feature-content">
-              <h3>Many Stages</h3>
+              <h3>ステージいっぱい</h3>
 
               <p>
-                Discover relaxing levels and fun challenges.
+                のんびり遊べるステージと、わくわくチャレンジがいっぱい♪
               </p>
             </div>
 
@@ -620,11 +622,11 @@
 
         <div>
 
-          <h2>News & Updates</h2>
+          <h2>お知らせ</h2>
 
           <p>
-            Future announcements, update notes,
-            events, and support information will be posted here.
+            アップデート情報やイベント、サポートのお知らせを
+            ここでちょこっと紹介するよ♪
           </p>
 
         </div>
@@ -635,7 +637,7 @@
       <div class="characters" id="randomCharacters"></div>
 
       <footer>
-        © 2026 Animal Rescue. All rights reserved.
+        © 2026 たすけて！アニマルレスキュー. All rights reserved.
       </footer>
 
     </div>
@@ -650,7 +652,7 @@
       "giraffe.png",
       "dinosaur.png",
       "elephant.png",
-      "Flamingo.png",
+      "フラミンゴ.png",
       "flyingsquirrel.png",
       "frog.png",
       "red-panda.png",
@@ -658,16 +660,16 @@
     ];
 
     const animalNames = {
-      "long-cat.png":"Long Cat",
-      "llama.png":"Llama",
-      "giraffe.png":"Giraffe",
-      "dinosaur.png":"Dinosaur",
-      "elephant.png":"Elephant",
-      "Flamingo.png":"Flamingo",
-      "flyingsquirrel.png":"Flying Squirrel",
-      "frog.png":"Frog",
-      "red-panda.png":"Red Panda",
-      "crocodile.png":"Crocodile"
+      "long-cat.png":"ながいねこ",
+      "llama.png":"ラマ",
+      "giraffe.png":"キリン",
+      "dinosaur.png":"恐竜",
+      "elephant.png":"ゾウ",
+      "フラミンゴ.png":"フラミンゴ",
+      "flyingsquirrel.png":"モモンガ",
+      "frog.png":"カエル",
+      "red-panda.png":"レッサーパンダ",
+      "crocodile.png":"ワニ"
     };
 
     function shuffleArray(array){
@@ -684,19 +686,19 @@
       return copied;
     }
 
-    const selectedAnimals =
+    const selectedどうぶつs =
       shuffleArray(animals).slice(0,5);
 
     const charactersBox =
       document.getElementById("randomCharacters");
 
-    selectedAnimals.forEach((animal)=>{
+    selectedどうぶつs.forEach((animal)=>{
 
       const img = document.createElement("img");
 
       img.src = "./" + animal;
 
-      img.alt = animalNames[animal] || "Animal";
+      img.alt = animalNames[animal] || "どうぶつ";
 
       charactersBox.appendChild(img);
     });
