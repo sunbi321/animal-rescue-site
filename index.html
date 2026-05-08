@@ -137,29 +137,33 @@
       margin-bottom:20px;
     }
 
-    .official-store-badge{
-      display:block;
-      transition:0.2s;
-      filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
-    }
+.official-store-badge{
+  width:250px;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
+}
 
-    .official-store-badge:hover{
-      transform:translateY(-2px);
-    }
+.official-store-badge:hover{
+  transform:translateY(-2px);
+}
 
-    .official-store-badge.google{
-      width:250px;
-    }
+.official-store-badge.google,
+.official-store-badge.apple{
+  width:250px;
+  height:74px;
+  margin-top:0;
+}
 
-    .official-store-badge.apple{
-      width:223px;
-      margin-top:2px;
-    }
-
-    .official-store-badge img{
-      width:100%;
-      display:block;
-    }
+.official-store-badge img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
 
     .promo-video{
       width:100%;
@@ -349,7 +353,12 @@
       h1{ font-size:42px; }
       .subtitle{ font-size:21px; }
       .desc{ font-size:16px; }
-      .official-store-badge{ width:100%; }
+.official-store-badge,
+.official-store-badge.google,
+.official-store-badge.apple{
+  width:230px;
+  height:68px;
+}
       .promo-video{
         max-width:250px;
         margin-bottom:210px;
