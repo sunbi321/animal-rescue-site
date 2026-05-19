@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -19,14 +20,13 @@
       width:100%;
       min-height:100%;
       overflow-x:hidden;
-      font-family:"M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+      font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
       background:#000;
       color:white;
     }
 
     body{
       position:relative;
-      min-height:100vh;
       background:#000;
     }
 
@@ -51,31 +51,32 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.64),
-        rgba(0,0,0,0.92)
-      );
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.38),
+          rgba(0,0,0,0.68),
+          rgba(0,0,0,0.94)
+        );
     }
 
     .content{
       position:relative;
       z-index:2;
-      padding:28px 22px 36px;
+      padding:28px 22px 40px;
     }
 
     .top{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:34px;
+      margin-bottom:38px;
       position:relative;
       z-index:1000;
     }
 
     .logo{
-      width:140px;
+      width:145px;
       display:flex;
       align-items:center;
     }
@@ -86,11 +87,11 @@
       display:block;
       object-fit:contain;
       margin-top:-18px;
-      filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+      filter:drop-shadow(0 6px 16px rgba(0,0,0,0.35));
     }
 
     .menu{
-      width:42px;
+      width:38px;
       cursor:pointer;
       position:relative;
       z-index:1002;
@@ -99,28 +100,39 @@
 
     .menu span{
       display:block;
-      height:5px;
+      height:4px;
       background:white;
       border-radius:999px;
-      margin:5px 0;
-      box-shadow:0 2px 10px rgba(0,0,0,0.45);
+      margin:6px 0;
+      opacity:0.92;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
 
     .dropdown-menu{
       position:absolute;
-      top:48px;
+      top:50px;
       right:0;
-      min-width:230px;
+
+      min-width:240px;
+
       display:none;
       flex-direction:column;
+
       overflow:hidden;
-      border-radius:20px;
-      background:rgba(20,16,12,0.94);
-      border:1px solid rgba(255,255,255,0.16);
-      box-shadow:0 18px 38px rgba(0,0,0,0.55);
-      backdrop-filter:blur(12px);
+
+      border-radius:24px;
+
+      background:rgba(18,18,18,0.82);
+
+      backdrop-filter:blur(18px);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.42),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+
       z-index:1001;
-      text-align:left;
     }
 
     .dropdown-menu.active{
@@ -129,16 +141,21 @@
     }
 
     .dropdown-menu a{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:16px 18px;
-      color:#fff7df;
+      padding:18px 22px;
+
+      color:rgba(255,255,255,0.92);
+
       text-decoration:none;
-      font-size:15px;
-      font-weight:800;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      text-shadow:0 2px 8px rgba(0,0,0,0.35);
+
+      font-size:14px;
+
+      font-weight:700;
+
+      letter-spacing:0.4px;
+
+      border-bottom:1px solid rgba(255,255,255,0.05);
+
+      transition:0.18s ease;
     }
 
     .dropdown-menu a:last-child{
@@ -146,19 +163,8 @@
     }
 
     .dropdown-menu a:hover{
-      background:rgba(255,216,94,0.16);
+      background:rgba(255,255,255,0.04);
       color:#ffd85e;
-    }
-
-    .dropdown-menu .menu-icon{
-      width:26px;
-      height:26px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:999px;
-      background:rgba(255,216,94,0.18);
-      flex-shrink:0;
     }
 
     @keyframes menuFade{
@@ -166,6 +172,7 @@
         opacity:0;
         transform:translateY(-8px) scale(0.98);
       }
+
       to{
         opacity:1;
         transform:translateY(0) scale(1);
@@ -173,62 +180,87 @@
     }
 
     .policy-card{
-      background:rgba(35,28,20,0.82);
-      border:1px solid rgba(255,255,255,0.15);
-      backdrop-filter:blur(10px);
-      border-radius:28px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.45);
+      background:rgba(30,24,18,0.78);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter:blur(14px);
+
+      border-radius:32px;
+
       overflow:hidden;
+
+      box-shadow:
+        0 18px 44px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.03);
     }
 
     .policy-hero{
-      padding:28px 22px 22px;
+      padding:34px 24px 28px;
       text-align:center;
-      background:linear-gradient(
-        to bottom,
-        rgba(255,216,94,0.16),
-        rgba(255,216,94,0.02)
-      );
-      border-bottom:1px solid rgba(255,255,255,0.1);
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255,216,94,0.12),
+          rgba(255,216,94,0.02)
+        );
+
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
     .policy-icon{
-      width:70px;
-      height:70px;
-      margin:0 auto 14px;
-      border-radius:24px;
+      width:82px;
+      height:82px;
+
+      margin:0 auto 18px;
+
+      border-radius:30px;
+
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,216,94,0.18);
-      box-shadow:0 10px 24px rgba(0,0,0,0.28);
-      font-size:34px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,216,94,0.12),
+          rgba(255,216,94,0.03)
+        );
+
+      border:1px solid rgba(255,216,94,0.14);
+
+      box-shadow:
+        0 12px 28px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(10px);
     }
 
     h1{
-      font-size:32px;
-      line-height:1.2;
+      font-size:34px;
+      line-height:1.15;
       font-weight:900;
       color:#ffd85e;
-      margin-bottom:10px;
-      text-shadow:0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom:14px;
+      text-shadow:0 4px 16px rgba(0,0,0,0.45);
     }
 
     .lead{
       font-size:15px;
-      line-height:1.7;
-      color:#fff1d1;
+      line-height:1.8;
+      color:#fff2d4;
       text-align:center;
     }
 
     .policy-body{
-      padding:22px;
+      padding:26px 24px;
     }
 
     .section{
-      margin-bottom:22px;
-      padding-bottom:20px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
+      margin-bottom:26px;
+      padding-bottom:24px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
     .section:last-child{
@@ -238,44 +270,75 @@
     }
 
     h2{
-      font-size:20px;
+      font-size:21px;
       color:#ffd85e;
-      margin-bottom:10px;
+      margin-bottom:12px;
       font-weight:900;
     }
 
     p,li{
       font-size:14px;
-      line-height:1.75;
+      line-height:1.85;
       color:#f5e8d4;
     }
 
     ul{
       padding-left:20px;
-      margin-top:8px;
+      margin-top:10px;
+    }
+
+    li{
+      margin-bottom:6px;
     }
 
     .notice{
-      padding:14px 16px;
-      border-radius:18px;
-      background:rgba(255,216,94,0.13);
-      border:1px solid rgba(255,216,94,0.24);
-      margin-top:12px;
+      padding:16px 18px;
+      border-radius:22px;
+
+      background:rgba(255,216,94,0.10);
+
+      border:1px solid rgba(255,216,94,0.16);
+
+      margin-top:16px;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .email-link{
+      color:#ffd85e;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .email-link:hover{
+      opacity:0.88;
     }
 
     .back-button{
       display:flex;
       justify-content:center;
       align-items:center;
+
       width:100%;
-      margin-top:24px;
-      padding:16px 18px;
+
+      margin-top:28px;
+
+      padding:18px 20px;
+
       border-radius:999px;
+
       background:#ffd85e;
+
       color:#2c1c0b;
+
       text-decoration:none;
+
       font-weight:900;
-      box-shadow:0 10px 24px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 12px 26px rgba(0,0,0,0.34);
+
       transition:0.2s;
     }
 
@@ -292,12 +355,13 @@
     }
 
     @media(max-width:420px){
+
       h1{
         font-size:28px;
       }
 
       .policy-body{
-        padding:20px 18px;
+        padding:22px 18px;
       }
 
       h2{
@@ -307,344 +371,456 @@
       p,li{
         font-size:13px;
       }
+
     }
   </style>
 </head>
 
 <body>
 
-  <div class="page">
+<div class="page">
 
-    <div class="background"></div>
+  <div class="background"></div>
 
-    <div class="content">
+  <div class="content">
 
-      <div class="top">
+    <div class="top">
 
-        <a class="logo" href="./index.html">
-          <img src="./jplogotop.png" alt="Animal Rescue" id="logoImage">
-        </a>
-
-        <div class="menu" id="menuButton" aria-label="Menu" role="button" tabindex="0">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav class="dropdown-menu" id="dropdownMenu" aria-label="Site menu">
-          <a href="./index.html">
-            <span class="menu-icon">🏠</span>
-            <span data-i18n="menuHome">ホーム</span>
-          </a>
-
-          <a href="./privacy.html">
-            <span class="menu-icon">🔒</span>
-            <span data-i18n="menuPrivacy">プライバシーポリシー</span>
-          </a>
-        </nav>
-
-      </div>
-
-      <main class="policy-card">
-
-        <div class="policy-hero">
-          <div class="policy-icon">🔒</div>
-
-          <h1 data-i18n="title">プライバシーポリシー</h1>
-
-          <p class="lead" data-i18n="lead">
-            「たすけて！アニマルレスキュー」では、サービス品質の向上、広告配信、利用状況の分析のために、必要な範囲で情報を取り扱います。
-          </p>
-        </div>
-
-        <div class="policy-body">
-
-          <section class="section">
-            <h2 data-i18n="section1Title">1. 取得する情報</h2>
-
-            <p data-i18n="section1Text">
-              本アプリでは、以下の情報を取得する場合があります。
-            </p>
-
-            <ul>
-              <li data-i18n="section1Item1">広告ID、Android IDなどの端末またはその他のID</li>
-              <li data-i18n="section1Item2">アプリの起動、操作、クラッシュなどの利用状況データ</li>
-              <li data-i18n="section1Item3">広告表示、広告クリックなど広告配信に関するデータ</li>
-            </ul>
-
-            <div class="notice">
-              <p data-i18n="section1Notice">
-                これらの情報は、Google Play Consoleのデータセーフティ申告で「端末またはその他のID」「分析」「広告またはマーケティング」に該当する可能性があります。
-              </p>
-            </div>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section2Title">2. 利用目的</h2>
-
-            <ul>
-              <li data-i18n="section2Item1">アプリの安定性、品質、機能改善のため</li>
-              <li data-i18n="section2Item2">不具合の把握および修正のため</li>
-              <li data-i18n="section2Item3">ユーザーに適切な広告を表示するため</li>
-              <li data-i18n="section2Item4">利用状況を分析し、ゲーム体験を改善するため</li>
-            </ul>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section3Title">3. 第三者サービス</h2>
-
-            <p data-i18n="section3Text">
-              本アプリでは、広告配信や分析のために、Google AdMob、Google Analytics for Firebase、Firebase Crashlyticsなどの第三者サービスを利用する場合があります。これらのサービスは、広告IDや端末情報、アプリ利用状況などを取得する場合があります。
-            </p>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section4Title">4. 情報の共有</h2>
-
-            <p data-i18n="section4Text">
-              取得された情報は、広告配信、分析、クラッシュ解析などの目的で、上記の第三者サービス提供者と共有される場合があります。法令に基づく場合を除き、取得した情報を不正な目的で販売することはありません。
-            </p>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section5Title">5. データの管理</h2>
-
-            <p data-i18n="section5Text">
-              本アプリは、取得する情報をサービス提供に必要な範囲で取り扱い、不正アクセス、紛失、改ざん、漏えいなどを防止するため、適切な管理に努めます。
-            </p>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section6Title">6. お問い合わせ</h2>
-
-            <p data-i18n="section6Text">
-              本ポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。
-            </p>
-
-            <p>
-              <strong>Email:</strong>
-              <span id="contactEmail">example@email.com</span>
-            </p>
-          </section>
-
-          <section class="section">
-            <h2 data-i18n="section7Title">7. 改定</h2>
-
-            <p data-i18n="section7Text">
-              本ポリシーは、必要に応じて内容を変更する場合があります。変更後の内容は、本ページに掲載した時点で有効となります。
-            </p>
-
-            <p>
-              <strong data-i18n="lastUpdatedLabel">最終更新日:</strong>
-              <span data-i18n="lastUpdatedDate">2026年5月19日</span>
-            </p>
-          </section>
-
-        </div>
-
-      </main>
-
-      <a class="back-button" href="./index.html" data-i18n="backButton">
-        メインページへ戻る
+      <a class="logo" href="./index.html">
+        <img src="./jplogotop.png" alt="Animal Rescue" id="logoImage">
       </a>
 
-      <footer data-i18n="footer">
-        © 2026 たすけて！アニマルレスキュー. All rights reserved.
-      </footer>
+      <div class="menu" id="menuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="dropdown-menu" id="dropdownMenu">
+
+        <a href="./index.html" data-i18n="menuHome">
+          ホーム
+        </a>
+
+        <a href="./privacy.html" data-i18n="menuPrivacy">
+          プライバシーポリシー
+        </a>
+
+      </nav>
 
     </div>
 
+    <main class="policy-card">
+
+      <div class="policy-hero">
+
+        <div class="policy-icon">
+
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <path
+              d="M12 3L5 6V11C5 16 8.4 20.7 12 22C15.6 20.7 19 16 19 11V6L12 3Z"
+              stroke="#FFD85E"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+            <path
+              d="M9.5 12L11.2 13.7L14.8 10.2"
+              stroke="#FFD85E"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+          </svg>
+
+        </div>
+
+        <h1 data-i18n="title">
+          プライバシーポリシー
+        </h1>
+
+        <p class="lead" data-i18n="lead">
+          「たすけて！アニマルレスキュー」では、サービス品質の向上、広告配信、利用状況の分析のために、必要な範囲で情報を取り扱います。
+        </p>
+
+      </div>
+
+      <div class="policy-body">
+
+        <section class="section">
+
+          <h2 data-i18n="section1Title">
+            1. 取得する情報
+          </h2>
+
+          <p data-i18n="section1Text">
+            本アプリでは、以下の情報を取得する場合があります。
+          </p>
+
+          <ul>
+            <li data-i18n="section1Item1">
+              広告ID、Android IDなどの端末またはその他のID
+            </li>
+
+            <li data-i18n="section1Item2">
+              アプリの起動、操作、クラッシュなどの利用状況データ
+            </li>
+
+            <li data-i18n="section1Item3">
+              広告表示、広告クリックなど広告配信に関するデータ
+            </li>
+          </ul>
+
+          <div class="notice">
+
+            <p data-i18n="section1Notice">
+              これらの情報は、Google Play Consoleのデータセーフティ申告で「端末またはその他のID」「分析」「広告またはマーケティング」に該当する可能性があります。
+            </p>
+
+          </div>
+
+        </section>
+
+        <section class="section">
+
+          <h2 data-i18n="section2Title">
+            2. 利用目的
+          </h2>
+
+          <ul>
+
+            <li data-i18n="section2Item1">
+              アプリの安定性、品質、機能改善のため
+            </li>
+
+            <li data-i18n="section2Item2">
+              不具合の把握および修正のため
+            </li>
+
+            <li data-i18n="section2Item3">
+              ユーザーに適切な広告を表示するため
+            </li>
+
+            <li data-i18n="section2Item4">
+              利用状況を分析し、ゲーム体験を改善するため
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="section">
+
+          <h2 data-i18n="section3Title">
+            3. 第三者サービス
+          </h2>
+
+          <p data-i18n="section3Text">
+            本アプリでは、広告配信や分析のために、Google AdMob、Google Analytics for Firebase、Firebase Crashlyticsなどの第三者サービスを利用する場合があります。
+          </p>
+
+        </section>
+
+        <section class="section">
+
+          <h2 data-i18n="section6Title">
+            6. お問い合わせ
+          </h2>
+
+          <p data-i18n="section6Text">
+            本ポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。
+          </p>
+
+          <p style="margin-top:12px;">
+
+            <a
+              href="mailto:info@anshin-labs.com"
+              class="email-link">
+              info@anshin-labs.com
+            </a>
+
+          </p>
+
+        </section>
+
+      </div>
+
+    </main>
+
+    <a
+      class="back-button"
+      href="./index.html"
+      data-i18n="backButton">
+
+      メインページへ戻る
+
+    </a>
+
+    <footer data-i18n="footer">
+      © 2026 たすけて！アニマルレスキュー. All rights reserved.
+    </footer>
+
   </div>
 
-  <script>
-    const translations = {
-      ko: {
-        pageTitle: "개인정보처리방침",
-        logoAlt: "애니멀 레스큐",
-        menuHome: "홈",
-        menuPrivacy: "개인정보처리방침",
-        title: "개인정보처리방침",
-        lead: "「도와줘요! 동물구조대」는 서비스 품질 개선, 광고 제공, 이용 현황 분석을 위해 필요한 범위에서 정보를 처리할 수 있습니다.",
-        section1Title: "1. 수집하는 정보",
-        section1Text: "본 앱은 다음 정보를 수집할 수 있습니다.",
-        section1Item1: "광고 ID, Android ID 등 기기 또는 기타 ID",
-        section1Item2: "앱 실행, 조작, 오류, 충돌 등 이용 현황 데이터",
-        section1Item3: "광고 표시, 광고 클릭 등 광고 제공 관련 데이터",
-        section1Notice: "이 정보는 Google Play Console 데이터 보안 양식에서 「기기 또는 기타 ID」, 「분석」, 「광고 또는 마케팅」 항목에 해당할 수 있습니다.",
-        section2Title: "2. 이용 목적",
-        section2Item1: "앱 안정성, 품질, 기능 개선",
-        section2Item2: "오류 및 충돌 원인 파악과 수정",
-        section2Item3: "사용자에게 적절한 광고 제공",
-        section2Item4: "이용 현황 분석 및 게임 경험 개선",
-        section3Title: "3. 제3자 서비스",
-        section3Text: "본 앱은 광고 제공 및 분석을 위해 Google AdMob, Google Analytics for Firebase, Firebase Crashlytics 등의 제3자 서비스를 사용할 수 있습니다. 해당 서비스는 광고 ID, 기기 정보, 앱 이용 현황 등을 수집할 수 있습니다.",
-        section4Title: "4. 정보 공유",
-        section4Text: "수집된 정보는 광고 제공, 분석, 충돌 분석 등의 목적으로 위 제3자 서비스 제공업체와 공유될 수 있습니다. 법령에 따른 경우를 제외하고, 수집한 정보를 부정한 목적으로 판매하지 않습니다.",
-        section5Title: "5. 데이터 관리",
-        section5Text: "본 앱은 서비스 제공에 필요한 범위에서 정보를 처리하며, 무단 접근, 분실, 변조, 유출 등을 방지하기 위해 적절한 관리에 노력합니다.",
-        section6Title: "6. 문의",
-        section6Text: "본 정책에 관한 문의는 아래 이메일로 연락해 주세요.",
-        section7Title: "7. 변경",
-        section7Text: "본 정책은 필요한 경우 변경될 수 있습니다. 변경된 내용은 본 페이지에 게시된 시점부터 적용됩니다.",
-        lastUpdatedLabel: "최종 업데이트:",
-        lastUpdatedDate: "2026년 5월 19일",
-        backButton: "메인 페이지로 돌아가기",
-        footer: "© 2026 도와줘요! 동물구조대. All rights reserved."
-      },
+</div>
 
-      ja: {
-        pageTitle: "プライバシーポリシー",
-        logoAlt: "アニマルレスキュー",
-        menuHome: "ホーム",
-        menuPrivacy: "プライバシーポリシー",
-        title: "プライバシーポリシー",
-        lead: "「たすけて！アニマルレスキュー」では、サービス品質の向上、広告配信、利用状況の分析のために、必要な範囲で情報を取り扱います。",
-        section1Title: "1. 取得する情報",
-        section1Text: "本アプリでは、以下の情報を取得する場合があります。",
-        section1Item1: "広告ID、Android IDなどの端末またはその他のID",
-        section1Item2: "アプリの起動、操作、クラッシュなどの利用状況データ",
-        section1Item3: "広告表示、広告クリックなど広告配信に関するデータ",
-        section1Notice: "これらの情報は、Google Play Consoleのデータセーフティ申告で「端末またはその他のID」「分析」「広告またはマーケティング」に該当する可能性があります。",
-        section2Title: "2. 利用目的",
-        section2Item1: "アプリの安定性、品質、機能改善のため",
-        section2Item2: "不具合の把握および修正のため",
-        section2Item3: "ユーザーに適切な広告を表示するため",
-        section2Item4: "利用状況を分析し、ゲーム体験を改善するため",
-        section3Title: "3. 第三者サービス",
-        section3Text: "本アプリでは、広告配信や分析のために、Google AdMob、Google Analytics for Firebase、Firebase Crashlyticsなどの第三者サービスを利用する場合があります。これらのサービスは、広告IDや端末情報、アプリ利用状況などを取得する場合があります。",
-        section4Title: "4. 情報の共有",
-        section4Text: "取得された情報は、広告配信、分析、クラッシュ解析などの目的で、上記の第三者サービス提供者と共有される場合があります。法令に基づく場合を除き、取得した情報を不正な目的で販売することはありません。",
-        section5Title: "5. データの管理",
-        section5Text: "本アプリは、取得する情報をサービス提供に必要な範囲で取り扱い、不正アクセス、紛失、改ざん、漏えいなどを防止するため、適切な管理に努めます。",
-        section6Title: "6. お問い合わせ",
-        section6Text: "本ポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。",
-        section7Title: "7. 改定",
-        section7Text: "本ポリシーは、必要に応じて内容を変更する場合があります。変更後の内容は、本ページに掲載した時点で有効となります。",
-        lastUpdatedLabel: "最終更新日:",
-        lastUpdatedDate: "2026年5月19日",
-        backButton: "メインページへ戻る",
-        footer: "© 2026 たすけて！アニマルレスキュー. All rights reserved."
-      },
+<script>
 
-      en: {
-        pageTitle: "Privacy Policy",
-        logoAlt: "Animal Rescue",
-        menuHome: "Home",
-        menuPrivacy: "Privacy Policy",
-        title: "Privacy Policy",
-        lead: "Help! Animal Rescue may process necessary information to improve service quality, provide ads, and analyze app usage.",
-        section1Title: "1. Information We Collect",
-        section1Text: "This app may collect the following information.",
-        section1Item1: "Device or other IDs such as Advertising ID and Android ID",
-        section1Item2: "Usage data such as app launches, interactions, errors, and crashes",
-        section1Item3: "Ad-related data such as ad impressions and ad clicks",
-        section1Notice: "This information may correspond to Device or other IDs, Analytics, and Advertising or marketing in the Google Play Console Data Safety form.",
-        section2Title: "2. Purpose of Use",
-        section2Item1: "To improve app stability, quality, and features",
-        section2Item2: "To identify and fix errors and crashes",
-        section2Item3: "To provide appropriate advertisements",
-        section2Item4: "To analyze usage and improve the game experience",
-        section3Title: "3. Third-Party Services",
-        section3Text: "This app may use third-party services such as Google AdMob, Google Analytics for Firebase, and Firebase Crashlytics for advertising and analytics. These services may collect Advertising ID, device information, and app usage data.",
-        section4Title: "4. Sharing of Information",
-        section4Text: "Collected information may be shared with the third-party service providers above for advertising, analytics, and crash analysis. We do not sell collected information for improper purposes except where required by law.",
-        section5Title: "5. Data Management",
-        section5Text: "This app handles information within the scope necessary to provide the service and makes reasonable efforts to prevent unauthorized access, loss, alteration, or leakage.",
-        section6Title: "6. Contact",
-        section6Text: "For inquiries about this policy, please contact us at the email address below.",
-        section7Title: "7. Changes",
-        section7Text: "This policy may be updated as necessary. Changes become effective when posted on this page.",
-        lastUpdatedLabel: "Last updated:",
-        lastUpdatedDate: "May 19, 2026",
-        backButton: "Back to Main Page",
-        footer: "© 2026 Help! Animal Rescue. All rights reserved."
-      }
-    };
+const translations = {
 
-    function detectLanguage(){
-      const browserLanguage =
-        navigator.language ||
-        navigator.userLanguage ||
-        "ja";
+  ko: {
 
-      const lang = String(browserLanguage).toLowerCase();
+    pageTitle: "개인정보처리방침",
 
-      if(lang.startsWith("ko")){
-        return "ko";
-      }
+    logoAlt: "애니멀 레스큐",
 
-      if(lang.startsWith("en")){
-        return "en";
-      }
+    menuHome: "홈",
 
-      return "ja";
+    menuPrivacy: "개인정보처리방침",
+
+    title: "개인정보처리방침",
+
+    lead: "「도와줘요! 동물구조대」는 서비스 품질 개선, 광고 제공, 이용 현황 분석을 위해 필요한 범위에서 정보를 처리할 수 있습니다.",
+
+    section1Title: "1. 수집하는 정보",
+
+    section1Text: "본 앱은 다음 정보를 수집할 수 있습니다.",
+
+    section1Item1: "광고 ID, Android ID 등 기기 또는 기타 ID",
+
+    section1Item2: "앱 실행, 조작, 오류, 충돌 등 이용 현황 데이터",
+
+    section1Item3: "광고 표시, 광고 클릭 등 광고 제공 관련 데이터",
+
+    section1Notice: "이 정보는 Google Play Console 데이터 보안 양식에서 「기기 또는 기타 ID」, 「분석」, 「광고 또는 마케팅」 항목에 해당할 수 있습니다.",
+
+    section2Title: "2. 이용 목적",
+
+    section2Item1: "앱 안정성, 품질, 기능 개선",
+
+    section2Item2: "오류 및 충돌 원인 파악과 수정",
+
+    section2Item3: "사용자에게 적절한 광고 제공",
+
+    section2Item4: "이용 현황 분석 및 게임 경험 개선",
+
+    section3Title: "3. 제3자 서비스",
+
+    section3Text: "본 앱은 Google AdMob, Firebase Analytics, Firebase Crashlytics 등의 서비스를 사용할 수 있습니다.",
+
+    section6Title: "문의",
+
+    section6Text: "아래 이메일로 문의해 주세요.",
+
+    backButton: "메인 페이지로 돌아가기",
+
+    footer: "© 2026 도와줘요! 동물구조대. All rights reserved."
+
+  },
+
+  ja: {
+
+    pageTitle: "プライバシーポリシー",
+
+    logoAlt: "アニマルレスキュー",
+
+    menuHome: "ホーム",
+
+    menuPrivacy: "プライバシーポリシー",
+
+    title: "プライバシーポリシー",
+
+    lead: "「たすけて！アニマルレスキュー」では、サービス品質向上のために必要な範囲で情報を取り扱います。",
+
+    section1Title: "1. 取得する情報",
+
+    section1Text: "本アプリでは以下の情報を取得する場合があります。",
+
+    section1Item1: "広告ID、Android IDなどの端末またはその他のID",
+
+    section1Item2: "アプリ利用状況やクラッシュ情報",
+
+    section1Item3: "広告表示・広告クリック関連データ",
+
+    section1Notice: "Google Play データセーフティ申告対象となる場合があります。",
+
+    section2Title: "2. 利用目的",
+
+    section2Item1: "サービス品質改善",
+
+    section2Item2: "不具合修正",
+
+    section2Item3: "広告表示",
+
+    section2Item4: "利用状況分析",
+
+    section3Title: "3. 第三者サービス",
+
+    section3Text: "Google AdMob、Firebase Analytics、Firebase Crashlytics を利用する場合があります。",
+
+    section6Title: "お問い合わせ",
+
+    section6Text: "お問い合わせは以下のメールアドレスまでお願いします。",
+
+    backButton: "メインページへ戻る",
+
+    footer: "© 2026 たすけて！アニマルレスキュー. All rights reserved."
+
+  },
+
+  en: {
+
+    pageTitle: "Privacy Policy",
+
+    logoAlt: "Animal Rescue",
+
+    menuHome: "Home",
+
+    menuPrivacy: "Privacy Policy",
+
+    title: "Privacy Policy",
+
+    lead: "Help! Animal Rescue may process necessary information for service improvement and analytics.",
+
+    section1Title: "1. Information We Collect",
+
+    section1Text: "This app may collect the following information.",
+
+    section1Item1: "Advertising ID, Android ID and other device identifiers",
+
+    section1Item2: "Usage and crash data",
+
+    section1Item3: "Ad impressions and ad interaction data",
+
+    section1Notice: "This may fall under Google Play Data Safety declarations.",
+
+    section2Title: "2. Purpose of Use",
+
+    section2Item1: "Service improvement",
+
+    section2Item2: "Bug fixing",
+
+    section2Item3: "Advertising",
+
+    section2Item4: "Analytics",
+
+    section3Title: "3. Third Party Services",
+
+    section3Text: "This app may use Google AdMob, Firebase Analytics and Firebase Crashlytics.",
+
+    section6Title: "Contact",
+
+    section6Text: "Please contact us at the email below.",
+
+    backButton: "Back to Main Page",
+
+    footer: "© 2026 Help! Animal Rescue. All rights reserved."
+
+  }
+
+};
+
+function detectLanguage(){
+
+  const browserLanguage =
+    navigator.language ||
+    navigator.userLanguage ||
+    "ja";
+
+  const lang = String(browserLanguage).toLowerCase();
+
+  if(lang.startsWith("ko")){
+    return "ko";
+  }
+
+  if(lang.startsWith("en")){
+    return "en";
+  }
+
+  return "ja";
+
+}
+
+const currentLanguage = detectLanguage();
+
+const t = translations[currentLanguage];
+
+document.documentElement.lang = currentLanguage;
+
+document.title = t.pageTitle;
+
+document.querySelectorAll("[data-i18n]").forEach((element)=>{
+
+  const key = element.getAttribute("data-i18n");
+
+  if(t[key]){
+    element.textContent = t[key];
+  }
+
+});
+
+const logoImage = document.getElementById("logoImage");
+
+if(logoImage){
+  logoImage.alt = t.logoAlt;
+}
+
+const menuButton = document.getElementById("menuButton");
+
+const dropdownMenu = document.getElementById("dropdownMenu");
+
+function toggleMenu(){
+
+  if(dropdownMenu){
+    dropdownMenu.classList.toggle("active");
+  }
+
+}
+
+function closeMenu(){
+
+  if(dropdownMenu){
+    dropdownMenu.classList.remove("active");
+  }
+
+}
+
+if(menuButton && dropdownMenu){
+
+  menuButton.addEventListener("click",(event)=>{
+
+    event.stopPropagation();
+
+    toggleMenu();
+
+  });
+
+  dropdownMenu.addEventListener("click",(event)=>{
+
+    event.stopPropagation();
+
+  });
+
+  document.addEventListener("click",closeMenu);
+
+  document.addEventListener("keydown",(event)=>{
+
+    if(event.key === "Escape"){
+      closeMenu();
     }
 
-    const currentLanguage = detectLanguage();
-    const t = translations[currentLanguage];
+  });
 
-    document.documentElement.lang = currentLanguage;
-    document.title = t.pageTitle;
+}
 
-    document.querySelectorAll("[data-i18n]").forEach((element)=>{
-      const key = element.getAttribute("data-i18n");
-
-      if(t[key]){
-        element.textContent = t[key];
-      }
-    });
-
-    const logoImage = document.getElementById("logoImage");
-
-    if(logoImage){
-      logoImage.alt = t.logoAlt;
-    }
-
-    const menuButton = document.getElementById("menuButton");
-    const dropdownMenu = document.getElementById("dropdownMenu");
-
-    function toggleMenu(){
-      if(dropdownMenu){
-        dropdownMenu.classList.toggle("active");
-      }
-    }
-
-    function closeMenu(){
-      if(dropdownMenu){
-        dropdownMenu.classList.remove("active");
-      }
-    }
-
-    if(menuButton && dropdownMenu){
-      menuButton.addEventListener("click", (event)=>{
-        event.stopPropagation();
-        toggleMenu();
-      });
-
-      menuButton.addEventListener("keydown", (event)=>{
-        if(event.key === "Enter" || event.key === " "){
-          event.preventDefault();
-          toggleMenu();
-        }
-
-        if(event.key === "Escape"){
-          closeMenu();
-        }
-      });
-
-      dropdownMenu.addEventListener("click", (event)=>{
-        event.stopPropagation();
-      });
-
-      document.addEventListener("click", closeMenu);
-
-      document.addEventListener("keydown", (event)=>{
-        if(event.key === "Escape"){
-          closeMenu();
-        }
-      });
-    }
-  </script>
+</script>
 
 </body>
 </html>
+```
