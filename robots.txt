@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anshin-labs.com/sitemap.xml

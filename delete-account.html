@@ -645,22 +645,11 @@
     };
 
     function detectLanguage(){
-      const browserLanguage =
-        navigator.language ||
-        navigator.userLanguage ||
-        "ja";
-
-      const lang = String(browserLanguage).toLowerCase();
-
-      if(lang.startsWith("ko")){
-        return "ko";
-      }
-
-      if(lang.startsWith("en")){
-        return "en";
-      }
-
-      return "ja";
+      const explicit=new URLSearchParams(location.search).get('lang');
+      let saved='';try{saved=localStorage.getItem('anshin-language')||'';}catch{}
+      const requested=explicit||saved;
+      if(requested)return ['ko','ja','en'].includes(requested)?requested:'en';
+      return (navigator.languages||[navigator.language||'en']).map(x=>x.split('-')[0]).find(x=>['ko','ja','en'].includes(x))||'en';
     }
 
     const currentLanguage = detectLanguage();
@@ -729,5 +718,6 @@
     }
   </script>
 
+<script src="./legacy-nav.js"></script>
 </body>
 </html>

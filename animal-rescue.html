@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="pageTitle">たすけて！アニマルレスキュー - パズルゲーム</title>
+<link rel="icon" type="image/png" href="./app.png">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap");
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html,body{
+      width:100%;
+      min-height:100%;
+      overflow-x:hidden;
+      font-family:"M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+      background:#000;
+      color:white;
+    }
+
+    body{
+      position:relative;
+      min-height:100vh;
+      background:#000;
+    }
+
+    .page{
+      width:100%;
+      max-width:480px;
+      margin:0 auto;
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .background{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:url("loading.png") center center / cover no-repeat;
+    }
+
+    .background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.18),
+        rgba(0,0,0,0.28),
+        rgba(0,0,0,0.82)
+      );
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+      padding:28px 22px 40px;
+      text-align:center;
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:90px;
+    }
+
+    .logo{
+      width:140px;
+      display:flex;
+      align-items:center;
+    }
+
+    .logo img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      margin-top:-18px;
+      filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+    }
+
+    .menu{
+      width:34px;
+    }
+
+    .menu span{
+      display:block;
+      height:5px;
+      background:white;
+      border-radius:999px;
+      margin:5px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,0.45);
+    }
+.top{
+  position:relative;
+  z-index:1000;
+}
+
+.menu{
+  cursor:pointer;
+  position:relative;
+  z-index:1002;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:48px;
+  right:0;
+  min-width:230px;
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  border-radius:20px;
+  background:rgba(20,16,12,0.94);
+  border:1px solid rgba(255,255,255,0.16);
+  box-shadow:0 18px 38px rgba(0,0,0,0.55);
+  backdrop-filter:blur(12px);
+  z-index:1001;
+  text-align:left;
+}
+
+.dropdown-menu.active{
+  display:flex;
+}
+
+.dropdown-menu a{
+  padding:18px 22px;
+
+  color:#fff7df;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  letter-spacing:0.3px;
+
+  border-bottom:1px solid rgba(255,255,255,0.06);
+
+  transition:0.18s;
+
+  backdrop-filter:blur(8px);
+}
+
+.dropdown-menu a:hover{
+  background:rgba(255,255,255,0.05);
+
+  color:#ffd85e;
+}
+
+.dropdown-menu a:last-child{
+  border-bottom:none;
+}
+    .hero{
+      padding-top:10px;
+    }
+
+    h1{
+      font-size:48px;
+      line-height:0.95;
+      font-weight:900;
+      letter-spacing:-1px;
+      margin-bottom:16px;
+      text-shadow:0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .subtitle{
+      font-size:24px;
+      color:#ffd85e;
+      font-weight:900;
+      margin-bottom:24px;
+      text-shadow:0 4px 12px rgba(0,0,0,0.45);
+    }
+
+    .desc{
+      max-width:360px;
+      margin:0 auto 30px;
+      font-size:18px;
+      line-height:1.6;
+      text-shadow:0 3px 12px rgba(0,0,0,0.55);
+    }
+
+    .store-buttons{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+.official-store-badge{
+  width:250px;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,0.4));
+}
+
+.official-store-badge:hover{
+  transform:translateY(-2px);
+}
+
+.official-store-badge.google,
+.official-store-badge.apple{
+  width:250px;
+  height:74px;
+  margin-top:0;
+}
+
+.official-store-badge img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.official-store-badge.apple img{
+  width:100%;
+}
+
+.official-store-badge.google img{
+  width:100%;
+}
+
+    .promo-video{
+      width:100%;
+      max-width:280px;
+      margin:22px auto 230px;
+      border-radius:24px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 14px 34px rgba(0,0,0,0.55);
+      border:1px solid rgba(255,255,255,0.18);
+    }
+
+    .promo-video iframe{
+      width:100%;
+      aspect-ratio:9/16;
+      display:block;
+      border:0;
+      background:#000;
+    }
+
+    section{
+      margin-bottom:24px;
+    }
+
+    .features-title{
+      font-size:30px;
+      color:#ffd85e;
+      font-weight:900;
+      margin-bottom:20px;
+      text-shadow:0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .feature-card{
+      background:rgba(35,28,20,0.72);
+      border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(8px);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(0,0,0,0.35);
+    }
+
+    .feature-image{
+      width:100%;
+      height:90px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.04);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .feature-image img{
+      width:100%;
+      height:140px;
+      object-fit:contain;
+      transform:translateY(-10px);
+      filter:drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+    }
+
+    .feature-content{
+      padding:14px 10px 18px;
+    }
+
+    .feature-card h3{
+      font-size:15px;
+      margin-bottom:8px;
+      color:#ffd85e;
+    }
+
+    .feature-card p{
+      font-size:12px;
+      line-height:1.45;
+      color:#f1e5d5;
+    }
+
+    .news{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:20px;
+      border-radius:22px;
+      background:rgba(35,28,20,0.78);
+      border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(8px);
+      box-shadow:0 10px 24px rgba(0,0,0,0.35);
+      text-align:left;
+    }
+
+    .news-icon{
+      width:42px;
+      height:42px;
+      flex-shrink:0;
+    }
+
+    .news-icon svg{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
+    .news h2{
+      color:#ffd85e;
+      font-size:22px;
+      margin-bottom:6px;
+    }
+
+    .news p{
+      font-size:14px;
+      line-height:1.5;
+      color:#f1e5d5;
+    }
+
+    .characters{
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      gap:10px;
+      margin:34px 0 34px;
+      min-height:145px;
+      position:relative;
+    }
+
+    .characters img{
+      height:98px;
+      object-fit:contain;
+      filter:drop-shadow(0 8px 14px rgba(0,0,0,0.45));
+      animation:
+        animalBounce 2.6s ease-in-out infinite,
+        animalSide 3.8s ease-in-out infinite;
+      will-change:transform;
+    }
+
+    .characters img:nth-child(1){
+      animation-delay:0s, 0s;
+    }
+
+    .characters img:nth-child(2){
+      height:116px;
+      animation-delay:0.25s, 0.15s;
+    }
+
+    .characters img:nth-child(3){
+      height:102px;
+      animation-delay:0.5s, 0.3s;
+    }
+
+    .characters img:nth-child(4){
+      height:110px;
+      animation-delay:0.75s, 0.45s;
+    }
+
+    .characters img:nth-child(5){
+      height:96px;
+      animation-delay:1s, 0.6s;
+    }
+
+    @keyframes animalBounce{
+      0%{ translate:0 0; rotate:0deg; }
+      25%{ translate:0 -8px; rotate:-2deg; }
+      50%{ translate:0 0; rotate:0deg; }
+      75%{ translate:0 -6px; rotate:2deg; }
+      100%{ translate:0 0; rotate:0deg; }
+    }
+
+    @keyframes animalSide{
+      0%{ transform:translateX(0); }
+      25%{ transform:translateX(-6px); }
+      50%{ transform:translateX(4px); }
+      75%{ transform:translateX(7px); }
+      100%{ transform:translateX(0); }
+    }
+
+    footer{
+      padding:12px 0 6px;
+      font-size:13px;
+      color:#e6d1b4;
+      opacity:0.9;
+    }
+
+    @media(max-width:420px){
+      h1{ font-size:42px; }
+      .subtitle{ font-size:21px; }
+      .desc{ font-size:16px; }
+.official-store-badge,
+.official-store-badge.google,
+.official-store-badge.apple{
+  width:230px;
+  height:68px;
+}
+      .promo-video{
+        max-width:250px;
+        margin-bottom:210px;
+      }
+      .feature-card h3{ font-size:13px; }
+      .feature-card p{ font-size:11px; }
+      .feature-image{ height:80px; }
+      .feature-image img{ height:120px; }
+      .characters{ gap:6px; }
+      .characters img{ height:78px; }
+      .characters img:nth-child(2){ height:92px; }
+      .characters img:nth-child(3){ height:82px; }
+      .characters img:nth-child(4){ height:90px; }
+      .characters img:nth-child(5){ height:78px; }
+    }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="background"></div>
+
+    <div class="content">
+
+      <div class="top">
+
+        <div class="logo">
+          <img src="./jplogotop.png" alt="Animal Rescue" data-i18n-alt="logoAlt">
+        </div>
+
+<div class="menu" id="menuButton" aria-label="Menu" role="button" tabindex="0">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="dropdown-menu" id="dropdownMenu">
+
+  <a href="./index.html" data-i18n="menuHome">
+    ホーム
+  </a>
+
+  <a href="./privacy.html" data-i18n="menuPrivacy">
+    プライバシーポリシー
+  </a>
+  <a href="./delete-account.html" data-i18n="menuDelete">
+  アカウント削除
+</a>
+
+</nav>
+
+      </div>
+
+      <section class="hero">
+
+        <h1 data-i18n-html="heroTitle">
+          たすけて！<br>
+          アニマルレスキュー
+        </h1>
+
+        <div class="subtitle" data-i18n="subtitle">
+          ほのぼのパズルゲーム
+        </div>
+
+        <p class="desc" data-i18n="description">
+          パズルをといて、かわいい動物たちを助けよう！
+          森の中で、ほっこり小さな冒険がはじまるよ♪
+        </p>
+
+        <div class="store-buttons">
+
+          <a class="official-store-badge google"
+            href="https://play.google.com/store/apps/details?id=com.toruyoshida.ZooPuzzle"
+            target="_blank">
+
+            <img
+              id="googleBadge"
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png"
+              alt="Google Play で手に入れよう">
+
+          </a>
+
+          <a class="official-store-badge apple"
+            href="https://apps.apple.com/jp/app/%E3%81%9F%E3%81%99%E3%81%91%E3%81%A6-%E3%82%A2%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%A5%E3%83%BC/id6759999423"
+            target="_blank">
+
+            <img
+              id="appleBadge"
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store からダウンロード">
+
+          </a>
+
+        </div>
+
+        <div class="promo-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/itqfzraBHlI"
+            title="たすけて！アニマルレスキュー 紹介動画"
+            data-i18n-title="videoTitle"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+      </section>
+
+      <section>
+
+        <h2 class="features-title" data-i18n="featuresTitle">
+          ゲームのすてきなところ
+        </h2>
+
+        <div class="features">
+
+          <div class="feature-card">
+
+            <div class="feature-image">
+              <img src="./long-cat.png" alt="ながいねこ" data-i18n-alt="feature1Alt">
+            </div>
+
+            <div class="feature-content">
+              <h3 data-i18n="feature1Title">かんたんパズル</h3>
+              <p data-i18n="feature1Text">
+                だれでも楽しく遊べる、やさしいマッチパズルだよ♪
+              </p>
+            </div>
+
+          </div>
+
+          <div class="feature-card">
+
+            <div class="feature-image">
+              <img src="./llama.png" alt="ラマ" data-i18n-alt="feature2Alt">
+            </div>
+
+            <div class="feature-content">
+              <h3 data-i18n="feature2Title">どうぶつ救出</h3>
+              <p data-i18n="feature2Text">
+                かわいい動物のおともだちを助けて、物語も楽しもう！
+              </p>
+            </div>
+
+          </div>
+
+          <div class="feature-card">
+
+            <div class="feature-image">
+              <img src="./giraffe.png" alt="キリン" data-i18n-alt="feature3Alt">
+            </div>
+
+            <div class="feature-content">
+              <h3 data-i18n="feature3Title">ステージいっぱい</h3>
+              <p data-i18n="feature3Text">
+                のんびり遊べるステージと、わくわくチャレンジがいっぱい♪
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="news">
+
+        <div class="news-icon">
+
+          <svg viewBox="0 0 24 24" fill="none">
+
+            <path
+              d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z"
+              fill="#ffd85e"/>
+
+            <path
+              d="M18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"
+              fill="#ffd85e"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <h2 data-i18n="newsTitle">お知らせ</h2>
+
+          <p data-i18n="newsText">
+            アップデート情報やイベント、サポートのお知らせを
+            ここでちょこっと紹介するよ♪
+          </p>
+
+        </div>
+
+      </section>
+
+      <div class="characters" id="randomCharacters"></div>
+
+      <footer data-i18n="footer">
+        © 2026 たすけて！アニマルレスキュー. All rights reserved.
+      </footer>
+
+    </div>
+
+  </div>
+
+  <script>
+    const translations = {
+      ko: {
+        pageTitle: "도와줘요! 동물구조대 - 퍼즐 게임",
+        logoAlt: "애니멀 레스큐",
+        heroTitle: "도와줘요!<br>동물구조대",
+        subtitle: "힐링 퍼즐 게임",
+        description: "퍼즐을 풀고 귀여운 동물들을 구해 주세요! 숲속에서 따뜻하고 작은 모험이 시작돼요♪",
+        videoTitle: "도와줘요! 동물구조대 소개 영상",
+        featuresTitle: "게임의 매력 포인트",
+        feature1Title: "쉬운 퍼즐",
+        feature1Text: "누구나 즐겁게 플레이할 수 있는 쉬운 매치 퍼즐이에요♪",
+        feature1Alt: "긴 고양이",
+        feature2Title: "동물 구출",
+        feature2Text: "귀여운 동물 친구들을 구하면서 이야기도 함께 즐겨 보세요!",
+        feature2Alt: "라마",
+        feature3Title: "다양한 스테이지",
+        feature3Text: "느긋하게 즐길 수 있는 스테이지와 두근두근 챌린지가 가득해요♪",
+        feature3Alt: "기린",
+        newsTitle: "공지사항",
+        newsText: "업데이트 정보, 이벤트, 고객 지원 소식을 이곳에서 간단히 소개할게요♪",
+        footer: "© 2026 도와줘요! 동물구조대. All rights reserved.",
+        googleBadgeSrc: "https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png",
+        googleBadgeAlt: "Google Play에서 받기",
+        appleBadgeSrc: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
+        appleBadgeAlt: "App Store에서 다운로드",
+        menuHome: "홈",
+menuPrivacy: "개인정보처리방침",
+        menuDelete: "계정 삭제",
+        animalDefaultAlt: "동물",
+        animalNames: {
+          "long-cat.png":"긴 고양이",
+          "llama.png":"라마",
+          "giraffe.png":"기린",
+          "dinosaur.png":"공룡",
+          "elephant.png":"코끼리",
+          "Flamingo.png":"홍학",
+          "flyingsquirrel.png":"날다람쥐",
+          "frog.png":"개구리",
+          "red-panda.png":"레서판다",
+          "crocodile.png":"악어"
+        }
+      },
+
+      ja: {
+        pageTitle: "たすけて！アニマルレスキュー - パズルゲーム",
+        logoAlt: "アニマルレスキュー",
+        heroTitle: "たすけて！<br>アニマルレスキュー",
+        subtitle: "ほのぼのパズルゲーム",
+        description: "パズルをといて、かわいい動物たちを助けよう！森の中で、ほっこり小さな冒険がはじまるよ♪",
+        videoTitle: "たすけて！アニマルレスキュー 紹介動画",
+        featuresTitle: "ゲームのすてきなところ",
+        feature1Title: "かんたんパズル",
+        feature1Text: "だれでも楽しく遊べる、やさしいマッチパズルだよ♪",
+        feature1Alt: "ながいねこ",
+        feature2Title: "どうぶつ救出",
+        feature2Text: "かわいい動物のおともだちを助けて、物語も楽しもう！",
+        feature2Alt: "ラマ",
+        feature3Title: "ステージいっぱい",
+        feature3Text: "のんびり遊べるステージと、わくわくチャレンジがいっぱい♪",
+        feature3Alt: "キリン",
+        newsTitle: "お知らせ",
+        newsText: "アップデート情報やイベント、サポートのお知らせをここでちょこっと紹介するよ♪",
+        footer: "© 2026 たすけて！アニマルレスキュー. All rights reserved.",
+        googleBadgeSrc: "https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png",
+        googleBadgeAlt: "Google Play で手に入れよう",
+        appleBadgeSrc: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
+        appleBadgeAlt: "App Store からダウンロード",
+        menuHome: "ホーム",
+menuPrivacy: "プライバシーポリシー",
+        menuDelete: "アカウント削除",
+        animalDefaultAlt: "どうぶつ",
+        animalNames: {
+          "long-cat.png":"ながいねこ",
+          "llama.png":"ラマ",
+          "giraffe.png":"キリン",
+          "dinosaur.png":"恐竜",
+          "elephant.png":"ゾウ",
+          "Flamingo.png":"フラミンゴ",
+          "flyingsquirrel.png":"モモンガ",
+          "frog.png":"カエル",
+          "red-panda.png":"レッサーパンダ",
+          "crocodile.png":"ワニ"
+        }
+      },
+
+      en: {
+        pageTitle: "Help! Animal Rescue - Puzzle Game",
+        logoAlt: "Animal Rescue",
+        heroTitle: "Help!<br>Animal Rescue",
+        subtitle: "A Cozy Puzzle Game",
+        description: "Solve puzzles and rescue adorable animals! A warm little adventure begins in the forest♪",
+        videoTitle: "Help! Animal Rescue Promo Video",
+        featuresTitle: "What Makes This Game Special",
+        feature1Title: "Easy Puzzles",
+        feature1Text: "A gentle match puzzle game anyone can enjoy♪",
+        feature1Alt: "Long cat",
+        feature2Title: "Animal Rescue",
+        feature2Text: "Save cute animal friends and enjoy their heartwarming story!",
+        feature2Alt: "Llama",
+        feature3Title: "Lots of Stages",
+        feature3Text: "Relaxing stages and exciting challenges are waiting for you♪",
+        feature3Alt: "Giraffe",
+        newsTitle: "News",
+        newsText: "Updates, events, and support news will be shared here♪",
+        footer: "© 2026 Help! Animal Rescue. All rights reserved.",
+        googleBadgeSrc: "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+        googleBadgeAlt: "Get it on Google Play",
+        appleBadgeSrc: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
+        appleBadgeAlt: "Download on the App Store",
+        menuHome: "Home",
+menuPrivacy: "Privacy Policy",
+        menuDelete: "Delete Account",
+        animalDefaultAlt: "Animal",
+        animalNames: {
+          "long-cat.png":"Long cat",
+          "llama.png":"Llama",
+          "giraffe.png":"Giraffe",
+          "dinosaur.png":"Dinosaur",
+          "elephant.png":"Elephant",
+          "Flamingo.png":"Flamingo",
+          "flyingsquirrel.png":"Flying squirrel",
+          "frog.png":"Frog",
+          "red-panda.png":"Red panda",
+          "crocodile.png":"Crocodile"
+        }
+      }
+    };
+
+function detectLanguage(){
+  const explicit=new URLSearchParams(location.search).get('lang');
+  let saved=''; try{saved=localStorage.getItem('anshin-language')||'';}catch{}
+  const requested=explicit||saved;
+  if(requested)return ['ko','ja','en'].includes(requested)?requested:'en';
+  const available=(navigator.languages||[navigator.language||'en']).map(x=>x.split('-')[0]);
+  return available.find(x=>['ko','ja','en'].includes(x))||'en';
+}
+
+    const currentLanguage = detectLanguage();
+    const t = translations[currentLanguage];
+
+    document.documentElement.lang = currentLanguage;
+    document.title = t.pageTitle;
+
+    document.querySelectorAll("[data-i18n]").forEach((element)=>{
+      const key = element.getAttribute("data-i18n");
+
+      if(t[key]){
+        element.textContent = t[key];
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((element)=>{
+      const key = element.getAttribute("data-i18n-html");
+
+      if(t[key]){
+        element.innerHTML = t[key];
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach((element)=>{
+      const key = element.getAttribute("data-i18n-alt");
+
+      if(t[key]){
+        element.alt = t[key];
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-title]").forEach((element)=>{
+      const key = element.getAttribute("data-i18n-title");
+
+      if(t[key]){
+        element.title = t[key];
+      }
+    });
+
+    const googleBadge = document.getElementById("googleBadge");
+    const appleBadge = document.getElementById("appleBadge");
+
+    if(googleBadge){
+      googleBadge.src = t.googleBadgeSrc;
+      googleBadge.alt = t.googleBadgeAlt;
+    }
+
+    if(appleBadge){
+      appleBadge.src = t.appleBadgeSrc;
+      appleBadge.alt = t.appleBadgeAlt;
+    }
+
+    const animals = [
+      "long-cat.png",
+      "llama.png",
+      "giraffe.png",
+      "dinosaur.png",
+      "elephant.png",
+      "Flamingo.png",
+      "flyingsquirrel.png",
+      "frog.png",
+      "red-panda.png",
+      "crocodile.png"
+    ];
+
+    function shuffleArray(array){
+      const copied = [...array];
+
+      for(let i = copied.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [copied[i], copied[j]] = [copied[j], copied[i]];
+      }
+
+      return copied;
+    }
+
+    const selectedAnimals = shuffleArray(animals).slice(0,5);
+    const charactersBox = document.getElementById("randomCharacters");
+
+    selectedAnimals.forEach((animal)=>{
+      const img = document.createElement("img");
+
+      img.src = "./" + animal;
+      img.alt = t.animalNames[animal] || t.animalDefaultAlt;
+
+      charactersBox.appendChild(img);
+    });
+    const menuButton = document.getElementById("menuButton");
+const dropdownMenu = document.getElementById("dropdownMenu");
+
+if(menuButton && dropdownMenu){
+  menuButton.addEventListener("click", (event)=>{
+    event.stopPropagation();
+    dropdownMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", ()=>{
+    dropdownMenu.classList.remove("active");
+  });
+
+  dropdownMenu.addEventListener("click", (event)=>{
+    event.stopPropagation();
+  });
+}
+  </script>
+
+<script src="./legacy-nav.js"></script>
+</body>
+</html>
