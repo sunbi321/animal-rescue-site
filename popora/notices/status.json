@@ -1,10 +1,10 @@
 {
-  "version": 0,
+  "version": 1,
   "maintenance": {
-    "enabled": false,
-    "ends_at": null,
+    "enabled": true,
+    "ends_at": "2026-10-14T02:23:00.000Z",
     "notice_id": null,
-    "starts_at": null
+    "starts_at": "2026-10-12T02:22:00.000Z"
   },
   "notices": [],
   "client_updates": {
