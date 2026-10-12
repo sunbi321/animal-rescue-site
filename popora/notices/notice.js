@@ -1,8 +1,45 @@
-const languages=['ko','en','ja','zh-Hant','de','es','fr','pt-BR','id','th'];
-const titles=['공지','Notices','お知らせ','公告','Neuigkeiten','Noticias','Actualités','Notícias','Pengumuman','ประกาศ'];
-const empty=['아직 등록된 공지가 없습니다.','No notices yet.','お知らせはまだありません。','尚無公告。','Noch keine Mitteilungen.','Aún no hay avisos.','Aucune annonce pour le moment.','Ainda não há avisos.','Belum ada pengumuman.','ยังไม่มีประกาศ'];
-const params=new URLSearchParams(location.search);let locale=params.get('lang')||navigator.language;locale=languages.find(l=>l.toLowerCase()===locale.toLowerCase())||languages.find(l=>l.split('-')[0]===locale.split('-')[0])||'en';
-const picker=document.getElementById('language');for(const l of languages){const o=document.createElement('option');o.value=l;o.textContent=l;picker.append(o);}picker.value=locale;let notices=[];
-function render(){document.documentElement.lang=locale;document.getElementById('heading').textContent=titles[languages.indexOf(locale)];const target=document.getElementById('notices');target.replaceChildren();let entries=notices.filter(n=>n.published);if(params.has('id'))entries=entries.filter(n=>n.id===params.get('id'));if(!entries.length){const p=document.createElement('p');p.textContent=empty[languages.indexOf(locale)];target.append(p);}for(const n of entries){const article=document.createElement('article');const a=document.createElement('a');a.href='?id='+encodeURIComponent(n.id)+'&lang='+encodeURIComponent(locale);const title=document.createElement('h2');title.textContent=n.title[locale]||n.title.en;a.append(title);article.append(a);if(n.image&&/^https:\/\/(anshin-labs\.com|blsggkmvytquqpunxwlm\.supabase\.co)\//.test(n.image)){const img=document.createElement('img');img.src=n.image;img.alt=title.textContent;img.loading='lazy';article.append(img);}const body=document.createElement('p');body.textContent=n.body[locale]||n.body.en;article.append(body);target.append(article);}}
-picker.addEventListener('change',()=>{locale=picker.value;params.set('lang',locale);history.replaceState(null,'','?'+params);render();});
-(async()=>{try{const r=await fetch('feed.json');if(r.ok){notices=(await r.json()).notices||[];render();}}catch{}try{const r=await fetch('https://blsggkmvytquqpunxwlm.supabase.co/functions/v1/nomo-content?'+(params.has('id')?'notice='+encodeURIComponent(params.get('id')):'notices=1'),{signal:AbortSignal.timeout(4000)});if(r.ok){notices=(await r.json()).notices||[];render();}}catch{}render();})();
+// The web presentation is English. Keep multilingual feed data intact for the game.
+const params = new URLSearchParams(location.search);
+const target = document.getElementById('notices');
+const allLink = document.getElementById('all-notices');
+allLink.hidden = !params.has('id');
+let notices = [];
+let loaded = false;
+function render() {
+  target.replaceChildren();
+  const entries = notices.filter(n => n.published && (!params.has('id') || n.id === params.get('id')));
+  if (!entries.length) {
+    const state = document.createElement('p');
+    state.className = 'notice-state';
+    state.textContent = !loaded ? 'We couldn’t load the notices. Please try again in a moment.' : params.has('id') ? 'This notice is no longer available. You can find current updates in All notices.' : 'No notices yet. Check back for the next chapter.';
+    target.append(state);
+  }
+  for (const n of entries) {
+    const article = document.createElement('article');
+    const a = document.createElement('a');
+    a.href = '?id=' + encodeURIComponent(n.id);
+    const title = document.createElement('h2');
+    title.textContent = n.title?.en || 'POPORA update';
+    a.append(title);
+    article.append(a);
+    if (n.image && /^https:\/\/(anshin-labs\.com|blsggkmvytquqpunxwlm\.supabase\.co)\//.test(n.image)) {
+      const img = document.createElement('img');
+      img.src = n.image; img.alt = title.textContent; img.loading = 'lazy';
+      article.append(img);
+    }
+    const body = document.createElement('p');
+    body.textContent = n.body?.en || 'The English version of this update is being prepared. Please contact support if you need help.';
+    article.append(body); target.append(article);
+  }
+}
+(async () => {
+  try {
+    const r = await fetch('feed.json', {cache:'no-cache'});
+    if (r.ok) { const data = await r.json(); if (Array.isArray(data.notices)) {notices = data.notices; loaded = true; render();} }
+  } catch {}
+  try {
+    const r = await fetch('https://blsggkmvytquqpunxwlm.supabase.co/functions/v1/nomo-content?' + (params.has('id') ? 'notice=' + encodeURIComponent(params.get('id')) : 'notices=1'), {signal:AbortSignal.timeout(4000)});
+    if (r.ok) { const data = await r.json(); if (Array.isArray(data.notices)) {notices = data.notices; loaded = true;} }
+  } catch {}
+  render();
+})();
