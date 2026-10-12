@@ -1,12 +1,42 @@
 {
-  "version": 1,
+  "version": 3,
   "maintenance": {
     "enabled": true,
     "ends_at": "2026-10-14T02:23:00.000Z",
     "notice_id": null,
     "starts_at": "2026-10-12T02:22:00.000Z"
   },
-  "notices": [],
+  "notices": [
+    {
+      "id": "test",
+      "body": {
+        "de": "test",
+        "en": "test",
+        "es": "test",
+        "fr": "test",
+        "id": "test",
+        "ja": "test",
+        "ko": "test2211",
+        "th": "test",
+        "pt-BR": "test",
+        "zh-Hant": "test"
+      },
+      "image": "https://blsggkmvytquqpunxwlm.supabase.co/storage/v1/object/public/nomo-content/0912f627f4396b86857372df5006d9aae37d676ccec8cc05e846028fb4e3786b.png",
+      "title": {
+        "de": "test",
+        "en": "test",
+        "es": "test",
+        "fr": "test",
+        "id": "test",
+        "ja": "test",
+        "ko": "test1",
+        "th": "test",
+        "pt-BR": "test",
+        "zh-Hant": "test"
+      },
+      "published": true
+    }
+  ],
   "client_updates": {
     "ios": {
       "enabled": false,
