@@ -53,20 +53,7 @@
   const decorationObserver = new IntersectionObserver(entries => {
     for (const entry of entries) entry.target.classList.toggle('decoration-idle', !entry.isIntersecting);
   });
-  document.querySelectorAll('.studio-hero,.word-ribbon,.studio-intro').forEach(el => decorationObserver.observe(el));
-  const portal = document.querySelector('[data-tilt]');
-  if (portal && matchMedia('(pointer:fine)').matches) {
-    portal.addEventListener('pointermove', event => {
-      if (!motion) return;
-      const r = portal.getBoundingClientRect();
-      portal.style.setProperty('--tilt-x', ((event.clientX-r.left)/r.width*5-2.5)+'deg');
-      portal.style.setProperty('--tilt-y', (2.5-(event.clientY-r.top)/r.height*5)+'deg');
-    }, {passive:true});
-    portal.addEventListener('pointerleave', () => {
-      portal.style.setProperty('--tilt-x','0deg'); portal.style.setProperty('--tilt-y','0deg');
-    });
-  }
-
+  document.querySelectorAll('.studio-hero,.studio-intro').forEach(el => decorationObserver.observe(el));
   const tabs = [...document.querySelectorAll('[data-world]')];
   function selectWorld(tab, focus=false) {
     for (const item of tabs) {
