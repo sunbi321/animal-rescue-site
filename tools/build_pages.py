@@ -5,7 +5,11 @@ from pathlib import Path
 from html import escape as e
 from urllib.parse import quote
 import json
+import hashlib
 root = Path(__file__).resolve().parent.parent
+def asset_version(name):
+    return hashlib.sha256((root/name).read_bytes()).hexdigest()[:12]
+
 brand = '<img src="/assets/studio-mark-v2.svg" width="44" height="44" alt=""><span class="brand-wordmark">ANSHIN<span>LABS</span></span>'
 
 def link(text, url, style='button'):
@@ -19,7 +23,7 @@ def footer():
 
 def save(path, title, body, description='Little friends. Big adventures. Discover Animal Rescue and POPORA: NOMO Legion from ANSHIN LABS.', scripts=''):
     canonical='' if path=='index.html' else path.replace('index.html','')
-    html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} · ANSHIN LABS</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#102b26"><meta property="og:title" content="{e(title)} · ANSHIN LABS"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><meta property="og:image" content="https://anshin-labs.com/assets/popora-world.webp"><meta property="og:url" content="https://anshin-labs.com/{canonical}"><link rel="canonical" href="https://anshin-labs.com/{canonical}"><link rel="icon" href="/assets/favicon-v2.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-v2-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/apple-touch-icon-v2.png" sizes="180x180"><link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/experience.css"><script defer src="/site.js"></script><script defer src="/experience.js"></script>{scripts}</head><body data-view="{'home' if path=='index.html' else 'inner'}">{header()}<main id="main">{body}</main>{footer()}</body></html>'''
+    html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} · ANSHIN LABS</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#102b26"><meta property="og:title" content="{e(title)} · ANSHIN LABS"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><meta property="og:image" content="https://anshin-labs.com/assets/popora-world.webp"><meta property="og:url" content="https://anshin-labs.com/{canonical}"><link rel="canonical" href="https://anshin-labs.com/{canonical}"><link rel="icon" href="/assets/favicon-v2.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-v2-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/apple-touch-icon-v2.png" sizes="180x180"><link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/experience.css?v={asset_version('experience.css')}"><script defer src="/site.js"></script><script defer src="/experience.js?v={asset_version('experience.js')}"></script>{scripts}</head><body data-view="{'home' if path=='index.html' else 'inner'}">{header()}<main id="main">{body}</main>{footer()}</body></html>'''
     (root/path).write_text(html)
 
 def art(name,alt,cls='',priority=False):
