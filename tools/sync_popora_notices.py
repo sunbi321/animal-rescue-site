@@ -8,4 +8,4 @@ root=Path(__file__).resolve().parents[1]/"popora/notices"
 with urllib.request.urlopen(url+"?notices=1",timeout=20) as response:archive=json.load(response)
 assert isinstance(archive.get("notices"),list)
 (root/"feed.json").write_text(json.dumps({"notices":archive["notices"]},ensure_ascii=False,indent=2)+"\n")
-(root/"status.json").write_text(json.dumps({key:data[key] for key in ["version","maintenance","notices"]},ensure_ascii=False,indent=2)+"\n")
+(root/"status.json").write_text(json.dumps({key:data[key] for key in ["version","maintenance","notices","client_updates"]},ensure_ascii=False,indent=2)+"\n")
