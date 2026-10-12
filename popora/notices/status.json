@@ -1,0 +1,9 @@
+{
+  "maintenance": {
+    "enabled": false,
+    "ends_at": null,
+    "notice_id": null,
+    "starts_at": null
+  },
+  "notices": []
+}

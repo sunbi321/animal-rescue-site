@@ -1,0 +1,32 @@
+name: Mirror POPORA notices
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: popora-notices
+  cancel-in-progress: false
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/sync_popora_notices.py
+      - name: Publish static mirror
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          git config user.name "POPORA notice mirror"
+          git config user.email "info@anshin-labs.com"
+          git add popora/notices/feed.json popora/notices/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update public POPORA notices"
+            git push
+            gh api --method POST repos/${{ github.repository }}/pages/builds
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            gh api --method POST repos/${{ github.repository }}/pages/builds
+          fi
