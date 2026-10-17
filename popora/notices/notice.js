@@ -22,7 +22,7 @@ function render() {
     title.textContent = n.title?.en || 'POPORA update';
     a.append(title);
     article.append(a);
-    if (n.image && /^https:\/\/(anshin-labs\.com|blsggkmvytquqpunxwlm\.supabase\.co)\//.test(n.image)) {
+    if (n.image && /^https:\/\/anshin-labs\.com\//.test(n.image)) {
       const img = document.createElement('img');
       img.src = n.image; img.alt = title.textContent; img.loading = 'lazy';
       article.append(img);
@@ -38,7 +38,7 @@ function render() {
     if (r.ok) { const data = await r.json(); if (Array.isArray(data.notices)) {notices = data.notices; loaded = true; render();} }
   } catch {}
   try {
-    const r = await fetch('https://blsggkmvytquqpunxwlm.supabase.co/functions/v1/nomo-content?' + (params.has('id') ? 'notice=' + encodeURIComponent(params.get('id')) : 'notices=1'), {signal:AbortSignal.timeout(4000)});
+    const r = await fetch('https://api.braincloudservers.com/webhook/15851/poporaService/public-service-v1', {signal:AbortSignal.timeout(4000)});
     if (r.ok) { const data = await r.json(); if (Array.isArray(data.notices)) {notices = data.notices; loaded = true;} }
   } catch {}
   render();

@@ -1,22 +1,22 @@
 {
-  "version": 6,
+  "version": 9.0,
   "maintenance": {
     "enabled": false,
-    "ends_at": "2026-10-14T02:23:00.000Z",
-    "notice_id": null,
-    "starts_at": "2026-10-12T02:22:00.000Z"
+    "starts_at": null,
+    "ends_at": null,
+    "notice_id": null
   },
   "notices": [],
   "client_updates": {
     "ios": {
       "enabled": false,
-      "version": "0.1.0",
-      "min_build": 0
+      "min_build": 0,
+      "version": "0.1.0"
     },
     "android": {
       "enabled": false,
-      "version": "0.1.0",
-      "min_build": 0
+      "min_build": 0,
+      "version": "0.1.0"
     }
   }
 }
