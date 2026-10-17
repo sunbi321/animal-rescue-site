@@ -18,12 +18,12 @@
     "계정 연결 시 제공자가 전달하는 계정 식별자·이메일, 게임 진행도·재화·구매 식별자, 직접 입력한 닉네임·그림·채팅을 저장합니다. 로그인·기록 복구·게임 기능·보상 검증·부정 이용 방지·고객지원에 사용합니다. 결제 카드 정보는 앱이 보관하지 않습니다.",
     "공개 범위",
     "월드·부족 채팅, 닉네임, 깃발 그림, 랭킹 및 부족전 정보는 해당 기능의 다른 이용자에게 보일 수 있습니다. 건의는 작성자와 운영자만 볼 수 있습니다.",
-    "서비스 제공자와 광고",
-    "Supabase는 인증과 서버 저장을 처리합니다. Apple·Google은 로그인과 스토어 결제를 처리합니다. Google AdMob·UMP는 광고, 동의 설정, 광고 측정 및 부정 이용 방지를 위해 기기·광고 식별자, IP 주소, 사용·진단 정보를 처리할 수 있습니다. iOS 추적 권한과 제공되는 광고 개인정보 설정으로 선택을 관리할 수 있습니다. 제공자 서버는 다른 국가에 위치할 수 있습니다.",
+    "서비스 제공자",
+    "brainCloud는 인증과 서버 저장을 처리합니다. Apple·Google은 로그인과 스토어 결제를 처리합니다. 현재 앱에는 광고 SDK가 포함되어 있지 않습니다. 제공자 서버는 다른 국가에 위치할 수 있습니다.",
     "보관 및 선택",
     "계정 유지 중 게임 제공에 필요한 기록을 보관합니다. 계정 삭제 시 위 범위대로 처리하며 구매 재사용 방지용 익명 해시는 남깁니다. 제공자 보관 정책은 아래 링크에서 확인할 수 있습니다. 개인정보 문의와 삭제 요청은 고객지원으로 보내 주세요.",
     "계정 삭제 안내",
-    "마지막 수정: 2026-10-11"
+    "마지막 수정: 2026-10-17"
   ],
   "en": [
     "English",
@@ -44,12 +44,12 @@
     "We store account identifiers and email provided when you link an account; game progress, currencies and purchase identifiers; and nicknames, drawings and chats you submit. We use these for sign-in, save recovery, gameplay, reward verification, abuse prevention and support. The app does not store payment card details.",
     "Visibility",
     "World and tribe chats, nicknames, flag drawings, rankings and tribal war information may be visible to other users of those features. Suggestions are visible only to their author and operators.",
-    "Providers and ads",
-    "Supabase handles authentication and server storage. Apple and Google handle sign-in and store purchases. Google AdMob and UMP may process device and advertising identifiers, IP addresses, usage and diagnostic information for ads, consent, measurement and fraud prevention. Manage available choices through iOS tracking permission and ad privacy settings. Provider servers may be located in other countries.",
+    "Service providers",
+    "brainCloud handles authentication and server storage. Apple and Google handle sign-in and store purchases. The current app does not include advertising SDKs. Provider servers may be located in other countries.",
     "Retention and choices",
     "We keep records needed to provide the game while your account remains active. Account deletion removes the data described above, retaining anonymous purchase replay prevention hashes. Provider retention policies are linked below. Contact support with privacy questions or deletion requests.",
     "Deletion guide",
-    "Updated: 2026-10-11"
+    "Updated: 2026-10-17"
   ],
   "ja": [
     "日本語",
@@ -70,12 +70,12 @@
     "連携時に提供されるアカウント識別子・メール、進行状況・通貨・購入識別子、入力した名前・絵・チャットを保存します。ログイン、復元、ゲーム提供、報酬検証、不正防止、サポートに使用します。アプリはカード情報を保存しません。",
     "公開範囲",
     "ワールド・部族チャット、名前、旗の絵、ランキング、部族戦情報は各機能の他の利用者に表示される場合があります。ご意見は投稿者と運営だけが閲覧できます。",
-    "事業者と広告",
-    "Supabaseは認証とサーバー保存を、Apple・Googleはログインとストア決済を処理します。Google AdMob・UMPは広告、同意、測定、不正防止のため端末・広告識別子、IPアドレス、利用・診断情報を処理する場合があります。iOSの追跡許可と広告プライバシー設定で選択を管理できます。サーバーが国外に置かれる場合があります。",
+    "サービス提供者",
+    "brainCloudは認証とサーバー保存を、Apple・Googleはログインとストア決済を処理します。現在のアプリには広告SDKは含まれていません。サーバーが国外に置かれる場合があります。",
     "保存と選択",
     "アカウント利用中はゲーム提供に必要な記録を保存します。削除時は上記範囲を消去し、購入の再利用防止用匿名ハッシュを保持します。各事業者の保持方針は下記リンクをご覧ください。個人情報や削除についてはサポートにご連絡ください。",
     "削除ガイド",
-    "更新日: 2026-10-11"
+    "更新日: 2026-10-17"
   ],
   "zh-Hant": [
     "繁體中文",
@@ -96,12 +96,12 @@
     "我們保存連結帳號時提供的識別碼與電子郵件、遊戲進度、貨幣、購買識別碼，以及您提交的暱稱、繪圖與聊天。用於登入、存檔還原、遊戲功能、獎勵驗證、防止濫用與支援。遊戲不保存付款卡資料。",
     "可見範圍",
     "世界與部落聊天、暱稱、旗幟繪圖、排名及部落戰資訊可能對相關功能的其他玩家可見。建議僅作者與管理員可見。",
-    "供應商與廣告",
-    "Supabase 處理驗證與伺服器儲存；Apple 與 Google 處理登入與商店購買。Google AdMob 與 UMP 可能為廣告、同意、衡量及防詐騙處理裝置與廣告識別碼、IP 位址、使用與診斷資訊。可透過 iOS 追蹤權限與廣告隱私設定管理可用選項。供應商伺服器可能位於其他國家。",
+    "服務供應商",
+    "brainCloud 處理驗證與伺服器儲存；Apple 與 Google 處理登入與商店購買。目前的應用程式不包含廣告 SDK。供應商伺服器可能位於其他國家。",
     "保留與選擇",
     "帳號使用期間，我們保存提供遊戲所需的紀錄。刪除帳號時依上述範圍處理，並保留防止重複使用購買紀錄的匿名雜湊。供應商保留政策請見下方連結。如有隱私問題或刪除申請，請聯絡支援。",
     "刪除指南",
-    "更新日期：2026-10-11"
+    "更新日期：2026-10-17"
   ],
   "de": [
     "Deutsch",
@@ -122,12 +122,12 @@
     "Wir speichern beim Verknüpfen übermittelte Kontokennungen und E-Mail-Adressen, Spielfortschritt, Währungen, Kaufkennungen sowie eingereichte Namen, Zeichnungen und Chats. Dies dient Anmeldung, Wiederherstellung, Spielbetrieb, Belohnungsprüfung, Missbrauchsschutz und Support. Die App speichert keine Kartendaten.",
     "Sichtbarkeit",
     "Welt- und Stammeschats, Namen, Flaggenzeichnungen, Ranglisten und Stammeskriegsdaten können für andere Nutzer der jeweiligen Funktionen sichtbar sein. Vorschläge sehen nur Verfasser und Betreiber.",
-    "Dienstleister und Werbung",
-    "Supabase übernimmt Anmeldung und Serverspeicherung; Apple und Google übernehmen Anmeldung und Storekäufe. Google AdMob und UMP können Geräte- und Werbekennungen, IP-Adressen, Nutzungs- und Diagnosedaten für Werbung, Einwilligung, Messung und Betrugsschutz verarbeiten. Verfügbare Optionen verwaltest du über die iOS-Tracking-Erlaubnis und die Werbedatenschutzeinstellungen. Server können sich in anderen Ländern befinden.",
+    "Dienstanbieter",
+    "brainCloud übernimmt die Authentifizierung und Serverspeicherung; Apple und Google übernehmen Anmeldung und Storekäufe. Die aktuelle App enthält keine Werbe-SDKs. Server können sich in anderen Ländern befinden.",
     "Aufbewahrung und Wahlmöglichkeiten",
     "Während dein Konto aktiv ist, speichern wir die für das Spiel nötigen Daten. Bei Kontolöschung entfernen wir die oben genannten Daten und behalten anonyme Hashwerte gegen erneute Kaufverwendung. Die Aufbewahrungsregeln der Anbieter sind unten verlinkt. Wende dich bei Datenschutzfragen oder Löschanfragen an den Support.",
     "Anleitung zur Löschung",
-    "Aktualisiert: 2026-10-11"
+    "Aktualisiert: 2026-10-17"
   ],
   "fr": [
     "Français",
@@ -148,12 +148,12 @@
     "Nous conservons les identifiants et l’adresse e-mail fournis lors de la liaison, la progression, les monnaies et identifiants d’achat, ainsi que les pseudonymes, dessins et messages saisis. Ils servent à la connexion, à la restauration, au jeu, à la validation des récompenses, à la prévention des abus et à l’assistance. L’application ne conserve pas les données de carte bancaire.",
     "Visibilité",
     "Les discussions mondiales et de tribu, pseudonymes, drapeaux, classements et informations de guerre peuvent être visibles par les autres utilisateurs concernés. Les suggestions ne sont visibles que par leur auteur et les administrateurs.",
-    "Prestataires et publicité",
-    "Supabase gère l’authentification et le stockage serveur. Apple et Google gèrent la connexion et les achats. Google AdMob et UMP peuvent traiter des identifiants d’appareil et publicitaires, adresses IP, données d’utilisation et diagnostics pour la publicité, le consentement, la mesure et la prévention de la fraude. Gérez les choix disponibles via l’autorisation de suivi iOS et les paramètres de confidentialité publicitaire. Les serveurs peuvent être situés à l’étranger.",
+    "Prestataires de services",
+    "brainCloud gère l’authentification et le stockage serveur. Apple et Google gèrent la connexion et les achats. L’application actuelle ne contient aucun SDK publicitaire. Les serveurs peuvent être situés à l’étranger.",
     "Conservation et choix",
     "Nous conservons les données nécessaires au jeu pendant que votre compte reste actif. Sa suppression efface les données décrites ci-dessus, sauf les empreintes anonymes empêchant la réutilisation d’achats. Les politiques des prestataires sont liées ci-dessous. Contactez l’assistance pour toute question de confidentialité ou demande de suppression.",
     "Guide de suppression",
-    "Mise à jour : 2026-10-11"
+    "Mise à jour : 2026-10-17"
   ],
   "es": [
     "Español",
@@ -174,12 +174,12 @@
     "Guardamos identificadores y correo facilitados al vincular la cuenta, progreso, monedas, identificadores de compra y los nombres, dibujos y mensajes que envías. Se utilizan para iniciar sesión, recuperar partidas, jugar, verificar recompensas, prevenir abusos y prestar soporte. La aplicación no guarda datos de tarjetas.",
     "Visibilidad",
     "Los chats mundiales y de tribu, nombres, banderas, clasificaciones y datos de guerra pueden ser visibles para otros usuarios de esas funciones. Las sugerencias solo son visibles para su autor y los operadores.",
-    "Proveedores y anuncios",
-    "Supabase gestiona la autenticación y el almacenamiento. Apple y Google gestionan el inicio de sesión y las compras. Google AdMob y UMP pueden procesar identificadores de dispositivo y publicidad, direcciones IP y datos de uso y diagnóstico para anuncios, consentimiento, medición y prevención del fraude. Gestiona las opciones disponibles mediante el permiso de seguimiento de iOS y los ajustes de privacidad publicitaria. Los servidores pueden estar en otros países.",
+    "Proveedores de servicios",
+    "brainCloud gestiona la autenticación y el almacenamiento. Apple y Google gestionan el inicio de sesión y las compras. La aplicación actual no incluye SDK de publicidad. Los servidores pueden estar en otros países.",
     "Conservación y opciones",
     "Conservamos los datos necesarios para ofrecer el juego mientras la cuenta esté activa. Al eliminarla se borran los datos descritos, conservando hashes anónimos para evitar reutilizar compras. Las políticas de los proveedores se enlazan abajo. Contacta con soporte para dudas de privacidad o solicitudes de eliminación.",
     "Guía de eliminación",
-    "Actualizado: 2026-10-11"
+    "Actualizado: 2026-10-17"
   ],
   "pt-BR": [
     "Português (Brasil)",
@@ -200,12 +200,12 @@
     "Armazenamos identificadores e e-mail fornecidos ao vincular a conta, progresso, moedas, identificadores de compra e nomes, desenhos e mensagens enviados. Usamos esses dados para login, recuperação, jogo, verificação de recompensas, prevenção de abusos e suporte. O aplicativo não armazena dados de cartão.",
     "Visibilidade",
     "Chats mundiais e de tribo, nomes, bandeiras, classificações e informações de guerra podem ser vistos por outros usuários dessas funções. Sugestões são visíveis apenas ao autor e aos operadores.",
-    "Provedores e anúncios",
-    "Supabase gerencia autenticação e armazenamento. Apple e Google gerenciam login e compras. Google AdMob e UMP podem processar identificadores de dispositivo e publicidade, endereços IP e dados de uso e diagnóstico para anúncios, consentimento, medição e prevenção de fraudes. Gerencie as opções disponíveis pela permissão de rastreamento do iOS e pelas configurações de privacidade de anúncios. Os servidores podem estar em outros países.",
+    "Provedores de serviços",
+    "brainCloud gerencia autenticação e armazenamento. Apple e Google gerenciam login e compras. O aplicativo atual não inclui SDKs de publicidade. Os servidores podem estar em outros países.",
     "Retenção e escolhas",
     "Mantemos os registros necessários para o jogo enquanto sua conta estiver ativa. A exclusão remove os dados descritos, mantendo hashes anônimos contra reutilização de compras. As políticas dos provedores estão nos links abaixo. Contate o suporte sobre privacidade ou exclusão.",
     "Guia de exclusão",
-    "Atualizado: 2026-10-11"
+    "Atualizado: 2026-10-17"
   ],
   "id": [
     "Bahasa Indonesia",
@@ -226,12 +226,12 @@
     "Kami menyimpan pengenal akun dan email saat penautan, progres, mata uang, pengenal pembelian, serta nama, gambar, dan pesan yang Anda kirim. Data digunakan untuk login, pemulihan, permainan, verifikasi hadiah, pencegahan penyalahgunaan, dan dukungan. Aplikasi tidak menyimpan data kartu.",
     "Visibilitas",
     "Obrolan dunia dan suku, nama, gambar bendera, peringkat, serta informasi perang dapat terlihat oleh pengguna fitur tersebut. Saran hanya terlihat oleh penulis dan pengelola.",
-    "Penyedia dan iklan",
-    "Supabase menangani autentikasi dan penyimpanan server. Apple dan Google menangani login serta pembelian. Google AdMob dan UMP dapat memproses pengenal perangkat dan iklan, alamat IP, data penggunaan dan diagnostik untuk iklan, persetujuan, pengukuran, serta pencegahan penipuan. Kelola pilihan melalui izin pelacakan iOS dan pengaturan privasi iklan yang tersedia. Server penyedia dapat berada di negara lain.",
+    "Penyedia layanan",
+    "brainCloud menangani autentikasi dan penyimpanan server. Apple dan Google menangani login serta pembelian. Aplikasi saat ini tidak menyertakan SDK iklan. Server penyedia dapat berada di negara lain.",
     "Retensi dan pilihan",
     "Kami menyimpan catatan yang diperlukan selama akun aktif. Penghapusan akun menghapus data di atas, dengan menyimpan hash anonim pencegah penggunaan ulang pembelian. Kebijakan penyedia ditautkan di bawah. Hubungi dukungan tentang privasi atau penghapusan.",
     "Panduan penghapusan",
-    "Diperbarui: 2026-10-11"
+    "Diperbarui: 2026-10-17"
   ],
   "th": [
     "ไทย",
@@ -252,11 +252,11 @@
     "เราเก็บรหัสบัญชีและอีเมลที่ได้รับเมื่อเชื่อมบัญชี ความคืบหน้า สกุลเงิน รหัสการซื้อ รวมถึงชื่อ ภาพ และแชตที่ส่ง ใช้สำหรับเข้าสู่ระบบ กู้คืนข้อมูล เล่นเกม ตรวจสอบรางวัล ป้องกันการใช้งานผิด และช่วยเหลือ แอปไม่เก็บข้อมูลบัตรชำระเงิน",
     "การมองเห็น",
     "แชตโลกและเผ่า ชื่อ รูปธง อันดับ และข้อมูลสงครามอาจแสดงแก่ผู้ใช้ฟังก์ชันนั้น ข้อเสนอแนะมองเห็นได้เฉพาะผู้เขียนและผู้ดูแล",
-    "ผู้ให้บริการและโฆษณา",
-    "Supabase จัดการการยืนยันตัวตนและข้อมูลเซิร์ฟเวอร์ Apple และ Google จัดการการเข้าสู่ระบบและการซื้อ Google AdMob และ UMP อาจประมวลผลรหัสอุปกรณ์และโฆษณา ที่อยู่ IP ข้อมูลการใช้งานและวินิจฉัย เพื่อโฆษณา ความยินยอม การวัดผล และป้องกันการฉ้อโกง จัดการตัวเลือกผ่านสิทธิ์ติดตาม iOS และการตั้งค่าความเป็นส่วนตัวของโฆษณาที่มี เซิร์ฟเวอร์อาจอยู่ต่างประเทศ",
+    "ผู้ให้บริการ",
+    "brainCloud จัดการการยืนยันตัวตนและข้อมูลเซิร์ฟเวอร์ Apple และ Google จัดการการเข้าสู่ระบบและการซื้อ แอปปัจจุบันไม่มี SDK โฆษณา เซิร์ฟเวอร์ของผู้ให้บริการอาจอยู่ต่างประเทศ",
     "การเก็บข้อมูลและทางเลือก",
     "เราเก็บข้อมูลที่จำเป็นขณะบัญชียังใช้งาน การลบบัญชีจะลบข้อมูลตามข้างต้น โดยเก็บแฮชไม่ระบุตัวตนเพื่อป้องกันการใช้รายการซื้อซ้ำ ดูนโยบายผู้ให้บริการจากลิงก์ด้านล่าง ติดต่อฝ่ายสนับสนุนเรื่องความเป็นส่วนตัวหรือการลบ",
     "คู่มือการลบ",
-    "อัปเดต: 2026-10-11"
+    "อัปเดต: 2026-10-17"
   ]
 }
