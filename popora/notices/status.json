@@ -1,5 +1,5 @@
 {
-  "version": 11.0,
+  "version": 12.0,
   "maintenance": {
     "enabled": false,
     "starts_at": null,
@@ -10,13 +10,13 @@
   "client_updates": {
     "ios": {
       "enabled": true,
-      "min_build": 148,
-      "version": "0.1.8"
+      "min_build": 155,
+      "version": "0.1.10"
     },
     "android": {
       "enabled": true,
-      "min_build": 23,
-      "version": "0.1.8"
+      "min_build": 25,
+      "version": "0.1.10"
     }
   }
 }
