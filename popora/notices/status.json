@@ -1,5 +1,5 @@
 {
-  "version": 26.0,
+  "version": 27.0,
   "maintenance": {
     "enabled": false,
     "starts_at": null,
@@ -15,8 +15,8 @@
     },
     "android": {
       "enabled": true,
-      "min_build": 34,
-      "version": "0.1.19"
+      "min_build": 36,
+      "version": "0.1.21"
     }
   }
 }
